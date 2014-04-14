@@ -1,31 +1,8 @@
-Version: 1.0
-Type: GameObject Blueprint
-Author: Kiwi.js Team
-Website: www.kiwijs.org
-KiwiJS last version tested: 0.5.3
-
-================================
 HTML5 Platform Game Blueprint
 ================================
 
-----------------------------------------------------------------------------------------
-Versions
-----------------------------------------------------------------------------------------
-
-1.0 - Initial GameObject create. 
-	- Interpret tile map data
-
-----------------------------------------------------------------------------------------
-Files:
-----------------------------------------------------------------------------------------
-
-Tile map - Required to generate terrain. Located at assets/map/map.json
-Tile Sheet - Required for the tile map generation also. Located at assets/img/tileset.png
-Player - Default moving character. Located at assets/img/player.png
-
-----------------------------------------------------------------------------------------
-Description:
-----------------------------------------------------------------------------------------
+![alt tag](https://upload.wikimedia.org/wikipedia/en/1/1f/Another_World_platform_game.gif
+)
 
 The Platformer Blueprint is an easy to use blueprint for Kiwi.js that you can include to rapidly develop a platforming Kiwi game.
 
@@ -42,6 +19,13 @@ Contains basic platforming functionality as follows:
 * Arcade physics 
 * Sloping tiles
 * Double jumping
+
+##Files
+
+Tile map - Required to generate terrain. Located at assets/map/map.json
+Tile Sheet - Required for the tile map generation also. Located at assets/img/tileset.png
+Player - Default moving character. Located at assets/img/player.png
+
 
 ##Roadmap
 Development begins on the 15th April. All features should be ready by EOD 22nd April at which point we will officailly a first stable release. 
