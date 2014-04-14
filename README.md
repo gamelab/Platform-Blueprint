@@ -1,6 +1,8 @@
 HTML5 Platform Game Blueprint
 ================================
 
+![alt tag](https://upload.wikimedia.org/wikipedia/en/1/1f/Another_World_platform_game.gif)
+
 A platform game (or platformer) is a video game which involves guiding an avatar to jump between suspended platforms, over obstacles, or both to advance the game. These challenges are known as jumping puzzles or freerunning. The player controls the jumps to avoid letting the avatar fall from platforms or miss necessary jumps.
 
 This Blueprint allows users to rapidly develop a basic platforming game. This repository is in active development and should be updated almost daily until we release an official version. 
@@ -15,6 +17,11 @@ Contains basic platforming functionality as follows:
 * Sloping tiles
 * Double jumping
 
+##Roadmap
+
+Development begins on the 15th April. All features should be ready by EOD 22nd April at which point we will officailly a first stable release. 
+
+While the above list of features are by no means fully extensive and representive of all the possible features you might find yourself wanting we will be making every effort to ensure that this blueprint is compatible with all other official Kiwi.JS Plugins and features. 
 
 ##Contribute 
 
@@ -24,4 +31,5 @@ https://github.com/gamelab/Platform-Blueprint/issues/new
 
 ##Licence
 MIT
+
 
