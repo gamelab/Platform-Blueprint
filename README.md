@@ -1,17 +1,39 @@
-Name: Platformer Blueprint
+Version: 1.0
+Type: GameObject Blueprint
+Author: Kiwi.js Team
+Website: www.kiwijs.org
+KiwiJS last version tested: 0.5.3
+
+================================
 HTML5 Platform Game Blueprint
 ================================
-Type: GameObject Blueprint
+
+----------------------------------------------------------------------------------------
+Versions
+----------------------------------------------------------------------------------------
+
+1.0 - Initial GameObject create. 
 	- Interpret tile map data
 
-![alt tag](https://upload.wikimedia.org/wikipedia/en/1/1f/Another_World_platform_game.gif)
+----------------------------------------------------------------------------------------
+Files:
+----------------------------------------------------------------------------------------
+
+Tile map - Required to generate terrain. Located at assets/map/map.json
+Tile Sheet - Required for the tile map generation also. Located at assets/img/tileset.png
+Player - Default moving character. Located at assets/img/player.png
+
+----------------------------------------------------------------------------------------
+Description:
+----------------------------------------------------------------------------------------
+
 The Platformer Blueprint is an easy to use blueprint for Kiwi.js that you can include to rapidly develop a platforming Kiwi game.
 
 A platform game (or platformer) is a video game which involves guiding an avatar to jump between suspended platforms, over obstacles, or both to advance the game. These challenges are known as jumping puzzles or freerunning. The player controls the jumps to avoid letting the avatar fall from platforms or miss necessary jumps.
 
 This Blueprint allows users to rapidly develop a platforming game. This repository is in active development and should be updated almost daily until we release an official version. 
 
-##Features 
+##Features
 Contains basic platforming functionality as follows:
 * Tile map Creation (Tiled support)
 * Basic Character platforming movement
@@ -20,6 +42,7 @@ Contains basic platforming functionality as follows:
 * Arcade physics 
 * Sloping tiles
 * Double jumping
+
 ##Roadmap
 Development begins on the 15th April. All features should be ready by EOD 22nd April at which point we will officailly a first stable release. 
 
@@ -30,7 +53,6 @@ If you discover a bug or find yourself just wanting to jump on in and help make 
 Preloading Game Assets
 
 https://github.com/gamelab/Platform-Blueprint/issues/new
-
 
 ##Licence
 Creating a map

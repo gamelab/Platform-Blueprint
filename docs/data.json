@@ -6,276 +6,109 @@
         "url": "http://kiwijs.org/"
     },
     "files": {
-        "src\\Platformer-1.0.0.js": {
-            "name": "src\\Platformer-1.0.0.js",
-            "modules": {
-                "Plugins": 1
-            },
-            "classes": {
-                "Kiwi.Plugins.AchievementManager": 1,
-                "Kiwi.Plugins.Achievements.AchievementManager": 1
-            },
+        "src\\States\\LoadingState.js": {
+            "name": "src\\States\\LoadingState.js",
+            "modules": {},
+            "classes": {},
             "fors": {},
-            "namespaces": {
-                "Kiwi.Plugins": 1,
-                "Kiwi.Plugins.Achievements": 1
-            }
-        }
-    },
-    "modules": {
-        "Kiwi": {
-            "name": "Kiwi",
-            "submodules": {
-                "Plugins": 1
-            },
-            "classes": {
-                "Kiwi.Plugins.AchievementManager": 1,
-                "Kiwi.Plugins.Achievements.AchievementManager": 1
-            },
-            "fors": {},
-            "namespaces": {
-                "Kiwi.Plugins": 1,
-                "Kiwi.Plugins.Achievements": 1
-            },
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 15
+            "namespaces": {}
         },
-        "Plugins": {
-            "name": "Plugins",
-            "submodules": {},
+        "src\\States\\Platformer-1.0.0.js": {
+            "name": "src\\States\\Platformer-1.0.0.js",
+            "modules": {},
             "classes": {
-                "Kiwi.Plugins.AchievementManager": 1,
-                "Kiwi.Plugins.Achievements.AchievementManager": 1
+                "PlatformState": 1
             },
             "fors": {},
-            "is_submodule": 1,
-            "namespaces": {
-                "Kiwi.Plugins": 1,
-                "Kiwi.Plugins.Achievements": 1
-            },
-            "module": "Kiwi",
-            "namespace": "",
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 15,
-            "description": "The basic Achievement Manager Object. Contains name and version number."
+            "namespaces": {}
+        },
+        "src\\game.js": {
+            "name": "src\\game.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
         }
     },
+    "modules": {},
     "classes": {
-        "Kiwi.Plugins.AchievementManager": {
-            "name": "Kiwi.Plugins.AchievementManager",
-            "shortname": "Kiwi.Plugins.AchievementManager",
+        "PlatformState": {
+            "name": "PlatformState",
+            "shortname": "PlatformState",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins",
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 1,
-            "description": "The basic Achievement Manager Object. Contains name and version number."
-        },
-        "Kiwi.Plugins.Achievements.AchievementManager": {
-            "name": "Kiwi.Plugins.Achievements.AchievementManager",
-            "shortname": "Kiwi.Plugins.Achievements.AchievementManager",
-            "classitems": [],
-            "plugins": [],
-            "extensions": [],
-            "plugin_for": [],
-            "extension_for": [],
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements",
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 15,
-            "description": "A Kiwi Plugin GameObject that can manage a set of achievements.\n\nYou can currently set two types of achievements. \nDefault achievements are achievements that can simply be unlocked.\nNumber achievements keep track of a variable, and once it has reached it's specified objective, the achievement is unlocked.",
-            "extends": "Entity",
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 3,
+            "description": "The PlatformState in the core state that is used in the game. \n\nIt is the state where majority of the functionality occurs 'in-game' occurs.",
+            "extends": "State",
             "is_constructor": 1
         }
     },
     "classitems": [
         {
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 61,
-            "description": "A method that dynamically creates a new achievement. You can also create one manually in the achievements object above.",
-            "itemtype": "method",
-            "name": "createAchievement",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "The reference string of the achievement created. Use this to identify achievement.",
-                    "type": "String"
-                },
-                {
-                    "name": "titleVar",
-                    "description": "The displayable name of the achievement created. Use this to identify achievement for the player.",
-                    "type": "String"
-                },
-                {
-                    "name": "typeVar",
-                    "description": "The type of achievement created. 'number' or 'default'.",
-                    "type": "String"
-                },
-                {
-                    "name": "objectiveVar",
-                    "description": "Objective value used for numbered achievements. Once the current value matches, achievement is unlocked.",
-                    "type": "Number"
-                },
-                {
-                    "name": "descriptionVar",
-                    "description": "String describing achievement.",
-                    "type": "String"
-                }
-            ],
-            "access": "public",
-            "tagname": "",
-            "class": "Kiwi.Plugins.Achievements.AchievementManager",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements"
+            "file": "src\\States\\LoadingState.js",
+            "line": 1,
+            "description": "The Loading State is going to be used to load in all of the in-game assets that we need in game.\n\nBecause in this blueprint there is only a single \"Platform\" section we are going to load in all of \nthe assets at this point.",
+            "class": "PlatformState"
         },
         {
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 86,
-            "description": "A method that unlocks a default achievement.",
-            "itemtype": "method",
-            "name": "getAchievement",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "Name of the achievement to collect.",
-                    "type": "String"
-                }
-            ],
-            "access": "public",
-            "tagname": "",
-            "class": "Kiwi.Plugins.Achievements.AchievementManager",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements"
+            "file": "src\\States\\LoadingState.js",
+            "line": 9,
+            "description": "Since we want to use the custom Kiwi.JS loader with the bobbing kiwi/html5 logo and everything. We need to extend the KiwiLoadingScreen State.  \nThe KiwiLoadingScreen State is an extentsion of a normal State but it has some custom code to handle the loading/bobbing/fading of all the items, so if you override a method (like the preload) for example just make sure you call the super method.\n\nThe parameters we are passing into this method are as ordered.\n1 - name {String} Name of this state.\n2 - stateToSwitch {String} Name of the state to switch to AFTER all the assets have loaded. Note: The state you want to switch to should already have been added to the game.\n3 - dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}\n4 - subfolder {String} The folder that the loading graphics are located at.",
+            "class": "PlatformState"
         },
         {
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 100,
-            "description": "A method that updates a numbered achievement, and unlocks the achievement automatically if the objective is met.",
+            "file": "src\\States\\LoadingState.js",
+            "line": 21,
+            "description": "This preload method is responsible for preloading all your in game assets.",
             "itemtype": "method",
-            "name": "updateQuest",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "Name of quest to update.",
-                    "type": "String"
-                },
-                {
-                    "name": "value",
-                    "description": "Value to add to the current variable, or to set to, depending on type.",
-                    "type": "Boolean or number"
-                }
-            ],
-            "access": "public",
+            "name": "preload",
+            "access": "private",
             "tagname": "",
-            "class": "Kiwi.Plugins.Achievements.AchievementManager",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 121,
-            "description": "A method that returns a boolean of whether you have collected a specifc achievement.",
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 14,
+            "description": "This create method is executed when Kiwi Game reaches the boot stage of the game loop.",
             "itemtype": "method",
-            "name": "returnUnlocked",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "Name of achievement to check.",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "Achievement unlocked status.",
-                "type": "Boolean"
-            },
+            "name": "create",
             "access": "public",
             "tagname": "",
-            "class": "Kiwi.Plugins.Achievements.AchievementManager",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 136,
-            "description": "A method that returns the description string of any given achievement.",
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 98,
+            "description": "This method is the main update loop. Move scrolling items here",
             "itemtype": "method",
-            "name": "returnDescription",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "Name of achievement to check.",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "Achievement description.",
-                "type": "String"
-            },
+            "name": "update",
             "access": "public",
             "tagname": "",
-            "class": "Kiwi.Plugins.Achievements.AchievementManager",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 151,
-            "description": "A method that returns the current value of any given achievement.",
-            "itemtype": "method",
-            "name": "returnCurrent",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "Name of quest to check.",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "The current value of the achievement.",
-                "type": "Number"
-            },
-            "access": "public",
-            "tagname": "",
-            "class": "Kiwi.Plugins.Achievements.AchievementManager",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements"
-        },
-        {
-            "file": "src\\Platformer-1.0.0.js",
-            "line": 170,
-            "description": "A method that returns required value for current achievement.",
-            "itemtype": "method",
-            "name": "returnObjective",
-            "params": [
-                {
-                    "name": "id",
-                    "description": "Name of quest to check.",
-                    "type": "String"
-                }
-            ],
-            "return": {
-                "description": "What is needed to complete the achievement.",
-                "type": "Number"
-            },
-            "access": "public",
-            "tagname": "",
-            "class": "Kiwi.Plugins.Achievements.AchievementManager",
-            "module": "Kiwi",
-            "submodule": "Plugins",
-            "namespace": "Kiwi.Plugins.Achievements"
+            "file": "src\\game.js",
+            "line": 2,
+            "description": "The core Platformer blueprint game file.\n\nThis file is only used to initalise (start-up) the main Kiwi Game \nand add all of the relevant states to that Game.",
+            "class": ""
         }
     ],
-    "warnings": []
+    "warnings": [
+        {
+            "message": "Missing item type\nThe Loading State is going to be used to load in all of the in-game assets that we need in game.\n\nBecause in this blueprint there is only a single \"Platform\" section we are going to load in all of \nthe assets at this point.",
+            "line": " src\\States\\LoadingState.js:1"
+        },
+        {
+            "message": "Missing item type\nSince we want to use the custom Kiwi.JS loader with the bobbing kiwi/html5 logo and everything. We need to extend the KiwiLoadingScreen State.  \nThe KiwiLoadingScreen State is an extentsion of a normal State but it has some custom code to handle the loading/bobbing/fading of all the items, so if you override a method (like the preload) for example just make sure you call the super method.\n\nThe parameters we are passing into this method are as ordered.\n1 - name {String} Name of this state.\n2 - stateToSwitch {String} Name of the state to switch to AFTER all the assets have loaded. Note: The state you want to switch to should already have been added to the game.\n3 - dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}\n4 - subfolder {String} The folder that the loading graphics are located at.",
+            "line": " src\\States\\LoadingState.js:9"
+        },
+        {
+            "message": "Missing item type\nThe core Platformer blueprint game file.\n\nThis file is only used to initalise (start-up) the main Kiwi Game \nand add all of the relevant states to that Game.",
+            "line": " src\\game.js:2"
+        }
+    ]
 }
