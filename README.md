@@ -1,64 +1,27 @@
-Name: Platformer Plugin.
-Version: 1.0
-Type: GameObject Plugin
-Author: Kiwi.js Team
-Website: www.kiwijs.org
-KiwiJS last version tested: 0.5.3
+HTML5 Platform Game Blueprint
+================================
 
-----------------------------------------------------------------------------------------
-Versions
-----------------------------------------------------------------------------------------
+A platform game (or platformer) is a video game which involves guiding an avatar to jump between suspended platforms, over obstacles, or both to advance the game. These challenges are known as jumping puzzles or freerunning. The player controls the jumps to avoid letting the avatar fall from platforms or miss necessary jumps.
 
-1.0 - Initial GameObject create. 
-	- Achievement creation.
-	- Updating and unlocking achievements.
-	- Check progress and unlocked status of any given achievement.
-	- Return the description of any achievement.
+This Blueprint allows users to rapidly develop a basic platforming game. This repository is in active development and should be updated almost daily until we release an official version. 
 
-----------------------------------------------------------------------------------------
-Files:
-----------------------------------------------------------------------------------------
-	
-
-----------------------------------------------------------------------------------------
-Description:
-----------------------------------------------------------------------------------------
-The Achievement Manager is a Plugin for Kiwi.js that you can include to have a new GameObject in your Kiwi Game's that is used to create, update and unlock custom achievements.
-
-If you have any problems then feel free to contact us via the http://www.kiwijs.org/help
-
-----------------------------------------------------------------------------------------
-How to Include: 
-----------------------------------------------------------------------------------------
-
-First Step:
-- Copy either the Achievements-1.0.0.js or the Achievements-1.0.0.min.js file (they should be in the src folder) into your project directory. We recommend that you save the files under a plugin directory that lives inside of your project directory so that you can easily manage all of the plugins but that is not required.
+##Features 
+Contains basic platforming functionality as follows:
+* Tile map Creation (Tiled support)
+* Basic Character platforming movement
+* Camera fixed on player
+* Character hit detection
+* Arcade physics 
+* Sloping tiles
+* Double jumping
 
 
-Second Step:
-- Link in the JavaScript file Achievements-1.0.0.js or the min version of the file) into your HTML file. Make sure you link it in underneath the link to the main Kiwi.js file AND underneath the Cocoon files.
+##Contribute 
 
+If you discover a bug or find yourself just wanting to jump on in please file an issue and get stuck in. We're a friedly bunch and hope people find themselves wanting to get involved. 
 
-----------------------------------------------------------------------------------------
-How to use.
-----------------------------------------------------------------------------------------
+https://github.com/gamelab/Platform-Blueprint/issues/new
 
---------------------------------------------
-Creating a new Object
---------------------------------------------
-- To create a new Gameobject is the same as how you would a Sprite or Static Image. Create a variable for where it should be saved and instantiate the 'Kiwi.Plugins.AchievementManager' object. 
-	    
-var achievementManager = Kiwi.Plugins.AchievementManager;
+##Licence
+MIT
 
---------------------------------------------
-Creating achievements
---------------------------------------------
-- To create a new achievement, simply call the createAchievement method and pass the following parameters.
-
-	* @param id {string} The reference string of the achievement created. Use this to identify achievement.
-	* @param titleVar {string} The displayable name of the achievement created. Use this to identify achievement for the player.
-	* @param typeVar {string} The type of achievement created. 'number' or 'default'.
-	* @param objectiveVar {number} Objective value used for numbered achievements. Once the current value matches, achievement is unlocked.
-	* @param descriptionVar {string} String describing achievement.
-
-achievementManager.createAchievement('click1', 'Click', 'Click to unlock this achievement', 'default', '');
