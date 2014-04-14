@@ -25,7 +25,7 @@ While the above list of features are by no means fully extensive and representiv
 
 ##Contribute 
 
-If you discover a bug or find yourself just wanting to jump on in please file an issue and get stuck in. We're a friedly bunch and hope people find themselves wanting to get involved. 
+If you discover a bug or find yourself just wanting to jump on in and help make this blueprint even better please file an issue and get stuck in. We're a friedly bunch and hope people find themselves wanting to get involved. 
 
 https://github.com/gamelab/Platform-Blueprint/issues/new
 
