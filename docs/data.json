@@ -1,0 +1,281 @@
+{
+    "project": {
+        "name": "PlatformerPlugin",
+        "description": "Basic platformer plugin",
+        "version": "1.0.0",
+        "url": "http://kiwijs.org/"
+    },
+    "files": {
+        "src\\Platformer-1.0.0.js": {
+            "name": "src\\Platformer-1.0.0.js",
+            "modules": {
+                "Plugins": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.AchievementManager": 1,
+                "Kiwi.Plugins.Achievements.AchievementManager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1,
+                "Kiwi.Plugins.Achievements": 1
+            }
+        }
+    },
+    "modules": {
+        "Kiwi": {
+            "name": "Kiwi",
+            "submodules": {
+                "Plugins": 1
+            },
+            "classes": {
+                "Kiwi.Plugins.AchievementManager": 1,
+                "Kiwi.Plugins.Achievements.AchievementManager": 1
+            },
+            "fors": {},
+            "namespaces": {
+                "Kiwi.Plugins": 1,
+                "Kiwi.Plugins.Achievements": 1
+            },
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 15
+        },
+        "Plugins": {
+            "name": "Plugins",
+            "submodules": {},
+            "classes": {
+                "Kiwi.Plugins.AchievementManager": 1,
+                "Kiwi.Plugins.Achievements.AchievementManager": 1
+            },
+            "fors": {},
+            "is_submodule": 1,
+            "namespaces": {
+                "Kiwi.Plugins": 1,
+                "Kiwi.Plugins.Achievements": 1
+            },
+            "module": "Kiwi",
+            "namespace": "",
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 15,
+            "description": "The basic Achievement Manager Object. Contains name and version number."
+        }
+    },
+    "classes": {
+        "Kiwi.Plugins.AchievementManager": {
+            "name": "Kiwi.Plugins.AchievementManager",
+            "shortname": "Kiwi.Plugins.AchievementManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins",
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 1,
+            "description": "The basic Achievement Manager Object. Contains name and version number."
+        },
+        "Kiwi.Plugins.Achievements.AchievementManager": {
+            "name": "Kiwi.Plugins.Achievements.AchievementManager",
+            "shortname": "Kiwi.Plugins.Achievements.AchievementManager",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements",
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 15,
+            "description": "A Kiwi Plugin GameObject that can manage a set of achievements.\n\nYou can currently set two types of achievements. \nDefault achievements are achievements that can simply be unlocked.\nNumber achievements keep track of a variable, and once it has reached it's specified objective, the achievement is unlocked.",
+            "extends": "Entity",
+            "is_constructor": 1
+        }
+    },
+    "classitems": [
+        {
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 61,
+            "description": "A method that dynamically creates a new achievement. You can also create one manually in the achievements object above.",
+            "itemtype": "method",
+            "name": "createAchievement",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "The reference string of the achievement created. Use this to identify achievement.",
+                    "type": "String"
+                },
+                {
+                    "name": "titleVar",
+                    "description": "The displayable name of the achievement created. Use this to identify achievement for the player.",
+                    "type": "String"
+                },
+                {
+                    "name": "typeVar",
+                    "description": "The type of achievement created. 'number' or 'default'.",
+                    "type": "String"
+                },
+                {
+                    "name": "objectiveVar",
+                    "description": "Objective value used for numbered achievements. Once the current value matches, achievement is unlocked.",
+                    "type": "Number"
+                },
+                {
+                    "name": "descriptionVar",
+                    "description": "String describing achievement.",
+                    "type": "String"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Achievements.AchievementManager",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements"
+        },
+        {
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 86,
+            "description": "A method that unlocks a default achievement.",
+            "itemtype": "method",
+            "name": "getAchievement",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Name of the achievement to collect.",
+                    "type": "String"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Achievements.AchievementManager",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements"
+        },
+        {
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 100,
+            "description": "A method that updates a numbered achievement, and unlocks the achievement automatically if the objective is met.",
+            "itemtype": "method",
+            "name": "updateQuest",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Name of quest to update.",
+                    "type": "String"
+                },
+                {
+                    "name": "value",
+                    "description": "Value to add to the current variable, or to set to, depending on type.",
+                    "type": "Boolean or number"
+                }
+            ],
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Achievements.AchievementManager",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements"
+        },
+        {
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 121,
+            "description": "A method that returns a boolean of whether you have collected a specifc achievement.",
+            "itemtype": "method",
+            "name": "returnUnlocked",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Name of achievement to check.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Achievement unlocked status.",
+                "type": "Boolean"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Achievements.AchievementManager",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements"
+        },
+        {
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 136,
+            "description": "A method that returns the description string of any given achievement.",
+            "itemtype": "method",
+            "name": "returnDescription",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Name of achievement to check.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "Achievement description.",
+                "type": "String"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Achievements.AchievementManager",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements"
+        },
+        {
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 151,
+            "description": "A method that returns the current value of any given achievement.",
+            "itemtype": "method",
+            "name": "returnCurrent",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Name of quest to check.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "The current value of the achievement.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Achievements.AchievementManager",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements"
+        },
+        {
+            "file": "src\\Platformer-1.0.0.js",
+            "line": 170,
+            "description": "A method that returns required value for current achievement.",
+            "itemtype": "method",
+            "name": "returnObjective",
+            "params": [
+                {
+                    "name": "id",
+                    "description": "Name of quest to check.",
+                    "type": "String"
+                }
+            ],
+            "return": {
+                "description": "What is needed to complete the achievement.",
+                "type": "Number"
+            },
+            "access": "public",
+            "tagname": "",
+            "class": "Kiwi.Plugins.Achievements.AchievementManager",
+            "module": "Kiwi",
+            "submodule": "Plugins",
+            "namespace": "Kiwi.Plugins.Achievements"
+        }
+    ],
+    "warnings": []
+}
