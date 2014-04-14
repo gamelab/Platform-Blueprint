@@ -38,7 +38,9 @@ Preloading Game Assets
 
 https://github.com/gamelab/Platform-Blueprint/issues/new
 
-##Licence
-Creating a map
-
+##Creating a map
 For more information, please view http://www.kiwijs.org/documentation/tutorials/tilemap-creating-tiled-maps/
+
+##Licence
+MIT
+
