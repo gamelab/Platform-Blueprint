@@ -10,12 +10,22 @@
  </tileset>
  <layer name="Ground" width="36" height="24">
   <data encoding="base64" compression="zlib">
-   eJztzsEKABAQANGNkqLw/z9rleLoYNvLvJr7iOCnoWXviW29JK16j8h5KWL7E7T4WNt1wx8AAADgNgEJNAC5
+   eJztzjEKACAMwMCiIIKC/v+1VujQ0cHSJQfZI4LfevaA07SZPWHuy5DYn6LVx5a1A38AAAAA7wC3WwCG
   </data>
  </layer>
  <layer name="Objects" width="36" height="24">
   <data encoding="base64" compression="zlib">
    eJztw6ENAAAIA7DdwP/HImeQyDZpAj/mCAAA1AL7JQBb
+  </data>
+ </layer>
+ <layer name="SlopeLeft" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF1AbsUCw40A4BAm40PJBuQnfLQLuJHw9mRsMsA+TGUTAKRsEoGAWjYBSMglEwvAAAzmwBKQ==
+  </data>
+ </layer>
+ <layer name="SlopeRight" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzjENAAAIA7BZwL9ZXgSQwNEqaMKmug4MLgAA8EsDX0oANA==
   </data>
  </layer>
  <layer name="Foreground" width="36" height="24">

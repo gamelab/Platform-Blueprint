@@ -30,7 +30,7 @@ LoadingState.preload = function () {
     //Otherwise the loading graphics will load last, and that defies the whole point in loading them. 
     KiwiLoadingScreen.prototype.preload.call(this);
 
-    this.addSpriteSheet('player', 'assets/img/player.png', 92, 64);
+    this.addSpriteSheet('player', 'assets/img/player.png', 57, 87);
     this.addSpriteSheet('tiles', 'assets/img/tileset.png', 48, 48);
     this.addJSON('tilemap', 'assets/map/map.json');
 };

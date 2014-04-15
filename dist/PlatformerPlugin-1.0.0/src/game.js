@@ -1,6 +1,6 @@
 
 /**
-* The core Platformer blueprint game file.
+* The containing Platformer blueprint game file.
 * 
 * This file is only used to initalise (start-up) the main Kiwi Game 
 * and add all of the relevant states to that Game.

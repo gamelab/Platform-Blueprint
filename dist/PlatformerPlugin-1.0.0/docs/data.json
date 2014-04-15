@@ -28,6 +28,13 @@
             "classes": {},
             "fors": {},
             "namespaces": {}
+        },
+        "src\\player.js": {
+            "name": "src\\player.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
         }
     },
     "modules": {},
@@ -82,7 +89,27 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 98,
+            "line": 49,
+            "description": "The generateTileMap method outputs and organizes tile map data",
+            "itemtype": "method",
+            "name": "generateTileMap",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 75,
+            "description": "The generateForegroundTileMap method generates tile map data in front of the player",
+            "itemtype": "method",
+            "name": "generateTileMap",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 88,
             "description": "This method is the main update loop. Move scrolling items here",
             "itemtype": "method",
             "name": "update",
@@ -93,7 +120,13 @@
         {
             "file": "src\\game.js",
             "line": 2,
-            "description": "The core Platformer blueprint game file.\n\nThis file is only used to initalise (start-up) the main Kiwi Game \nand add all of the relevant states to that Game.",
+            "description": "The containing Platformer blueprint game file.\n\nThis file is only used to initalise (start-up) the main Kiwi Game \nand add all of the relevant states to that Game.",
+            "class": ""
+        },
+        {
+            "file": "src\\player.js",
+            "line": 2,
+            "description": "The player sprite\n\nThis generates a sprite that can use Kiwi's arcade physics.",
             "class": ""
         }
     ],
@@ -107,8 +140,12 @@
             "line": " src\\States\\LoadingState.js:9"
         },
         {
-            "message": "Missing item type\nThe core Platformer blueprint game file.\n\nThis file is only used to initalise (start-up) the main Kiwi Game \nand add all of the relevant states to that Game.",
+            "message": "Missing item type\nThe containing Platformer blueprint game file.\n\nThis file is only used to initalise (start-up) the main Kiwi Game \nand add all of the relevant states to that Game.",
             "line": " src\\game.js:2"
+        },
+        {
+            "message": "Missing item type\nThe player sprite\n\nThis generates a sprite that can use Kiwi's arcade physics.",
+            "line": " src\\player.js:2"
         }
     ]
 }
