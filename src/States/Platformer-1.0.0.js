@@ -34,10 +34,6 @@ PlatformState.create = function () {
     //catch if up key is still down
     this.jumpReleased = true;
     this.sloping = true;
-    //catch if left button is currently pressed
-    this.leftDown = false;
-    //catch if right button is currently pressed
-    this.rightDown = false;
 
     this.player = new PlayerSprite(this, this.textures.player, 0, 0);
     this.player.animation.add('walking', [1, 2, 3, 4, 5, 6], 0.1, true);
@@ -64,6 +60,30 @@ PlatformState.create = function () {
     this.score = 0;
     this.scoreText = new Kiwi.GameObjects.Textfield(this, '0', 50, 50, '#FFF');
     this.addChild(this.scoreText);*/
+
+    //on stage movement controls
+    this.controllerActive = true;
+    if (this.controllerActive) this.generateController();
+}
+
+/**
+* The generateController method displays control buttons onto the stage, and uses the TouchButton plugin
+* @method generateController
+* @public
+*/
+PlatformState.generateController = function () {
+    console.log(this.textures['upButton'], Kiwi.Plugins)
+    this.upButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['upButton'], 81, 300);
+    this.addChild(this.upButton);
+
+    this.downButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['downButton'], 81, 441);
+    this.addChild(this.downButton);
+
+    this.leftButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['leftButton'], 26, 360);
+    this.addChild(this.leftButton);
+
+    this.rightButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['rightButton'], 162, 360);
+    this.addChild(this.rightButton);
 }
 
 /**
@@ -114,15 +134,12 @@ PlatformState.update = function () {
     
     Kiwi.State.prototype.update.call(this);
 
-    //reset key movement
-    this.leftDown = false;
-    this.rightDown = false;
     //move character via keyboard input
-    if (this.game.input.keyboard.isDown(Kiwi.Input.Keycodes.LEFT)) {
+    if (this.leftDown()) {
         this.player.scaleX = -1;
         this.player.physics.velocity.x = -40;
         this.player.animation.switchTo('walking');
-    } else if (this.game.input.keyboard.isDown(Kiwi.Input.Keycodes.RIGHT)) {
+    } else if (this.rightDown()) {
         this.player.scaleX = 1;
         this.player.physics.velocity.x = 40;
         this.player.animation.switchTo('walking');
@@ -162,7 +179,7 @@ PlatformState.update = function () {
         //on ground anyway, so reset jumps
         this.jumps = 0;
     }
-    if (this.game.input.keyboard.isDown(Kiwi.Input.Keycodes.UP)) {
+    if (this.upDown()) {
         this.jump();
     } else {
         this.jumpReleased = true;
@@ -183,6 +200,47 @@ PlatformState.jump = function () {
     }
 }
 
+/**
+* The leftDown method returns whether the left key, or the controller left button is down (when active)
+* @method leftDown
+* @public
+*/
+PlatformState.leftDown = function () {
+    if (this.game.input.keyboard.isDown(Kiwi.Input.Keycodes.LEFT)) return true;
+    if (this.controllerActive) {
+        if (this.leftButton.isDown) return true;
+    }
+    return false;
+}
+
+/**
+* The rightDown method returns whether the right key, or the controller right button is down (when active)
+* @method rightDown
+* @public
+*/
+PlatformState.rightDown = function () {
+    if (this.game.input.keyboard.isDown(Kiwi.Input.Keycodes.RIGHT)) return true;
+    if (this.controllerActive) {
+        if (this.rightButton.isDown) return true;
+    }
+    return false;
+}
+
+/**
+* The upDown method returns whether the up key, or the controller up button is down (when active)
+* @method upDown
+* @public
+*/
+PlatformState.upDown = function () {
+    if (this.game.input.keyboard.isDown(Kiwi.Input.Keycodes.UP)) return true;
+    console.log('cont', this.controllerActive);
+    if (this.controllerActive) {
+        if (this.upButton.isDown) {
+            return true;
+        }
+    }
+    return false;
+}
 
 /**
 * This method checks to see if a player is on a leftSlope.

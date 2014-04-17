@@ -43,6 +43,8 @@
             
                 <li><a href="../classes/PlatformState.html">PlatformState</a></li>
             
+                <li><a href="../classes/TouchButton.html">TouchButton</a></li>
+            
             </ul>
 
             <ul id="api-modules" class="apis modules">
@@ -97,7 +99,7 @@
 
 
 //Initialise the Kiwi Game. 
-var game = new Kiwi.Game(&#x27;content&#x27;, &#x27;Platformer&#x27;, null, { renderer: Kiwi.RENDERER_CANVAS });
+var game = new Kiwi.Game(&#x27;content&#x27;, &#x27;Platformer&#x27;, null, { plugins: [&#x27;TouchButton&#x27;] });
 
 //Add all the States we are going to use.
 game.states.addState(LoadingState);

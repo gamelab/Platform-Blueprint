@@ -30,6 +30,12 @@ LoadingState.preload = function () {
     //Otherwise the loading graphics will load last, and that defies the whole point in loading them. 
     KiwiLoadingScreen.prototype.preload.call(this);
 
+    //optional on screen controller assets
+    this.addSpriteSheet('leftButton', 'assets/img/controller/leftButton.png', 51, 73);
+    this.addSpriteSheet('rightButton', 'assets/img/controller/rightButton.png', 51, 73);
+    this.addSpriteSheet('upButton', 'assets/img/controller/upButton.png', 73, 51);
+    this.addSpriteSheet('downButton', 'assets/img/controller/downButton.png', 73, 51);
+
     this.addSpriteSheet('player', 'assets/img/player.png', 57, 87);
     this.addSpriteSheet('tiles', 'assets/img/tileset.png', 48, 48);
     this.addJSON('tilemap', 'assets/map/map.json');

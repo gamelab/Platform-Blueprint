@@ -43,6 +43,8 @@
             
                 <li><a href="../classes/PlatformState.html">PlatformState</a></li>
             
+                <li><a href="../classes/TouchButton.html">TouchButton</a></li>
+            
             </ul>
 
             <ul id="api-modules" class="apis modules">
@@ -214,6 +216,13 @@
                             </li>
                         
                             <li class="index-item method public">
+                                <a href="#method_generateController">generateController</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
                                 <a href="#method_generateForegroundTileMap">generateForegroundTileMap</a>
 
                                 
@@ -234,6 +243,13 @@
                                 
                             </li>
                         
+                            <li class="index-item method public">
+                                <a href="#method_leftDown">leftDown</a>
+
+                                
+                                
+                            </li>
+                        
                             <li class="index-item method private">
                                 <a href="#method_preload">preload</a>
 
@@ -242,7 +258,21 @@
                             </li>
                         
                             <li class="index-item method public">
+                                <a href="#method_rightDown">rightDown</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
                                 <a href="#method_update">update</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_upDown">upDown</a>
 
                                 
                                 
@@ -298,7 +328,7 @@
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l187"><code>src\States\Platformer-1.0.0.js:187</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l245"><code>src\States\Platformer-1.0.0.js:245</code></a>
         
         </p>
 
@@ -357,7 +387,7 @@ Also note, this function checks for the outward edges of the sloping tile and ca
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l249"><code>src\States\Platformer-1.0.0.js:249</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l307"><code>src\States\Platformer-1.0.0.js:307</code></a>
         
         </p>
 
@@ -439,6 +469,63 @@ Also note this function checks for the outward edges of the sloping tile and cal
 </div>
 
                 
+                    <div id="method_generateController" class="method item public">
+    <h3 class="name"><code>generateController</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l69"><code>src\States\Platformer-1.0.0.js:69</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The generateController method displays control buttons onto the stage, and uses the TouchButton plugin</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_generateForegroundTileMap" class="method item public">
     <h3 class="name"><code>generateForegroundTileMap</code></h3>
 
@@ -473,7 +560,7 @@ Also note this function checks for the outward edges of the sloping tile and cal
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l97"><code>src\States\Platformer-1.0.0.js:97</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l117"><code>src\States\Platformer-1.0.0.js:117</code></a>
         
         </p>
 
@@ -530,7 +617,7 @@ Also note this function checks for the outward edges of the sloping tile and cal
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l69"><code>src\States\Platformer-1.0.0.js:69</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l89"><code>src\States\Platformer-1.0.0.js:89</code></a>
         
         </p>
 
@@ -587,7 +674,7 @@ Also note this function checks for the outward edges of the sloping tile and cal
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l172"><code>src\States\Platformer-1.0.0.js:172</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l189"><code>src\States\Platformer-1.0.0.js:189</code></a>
         
         </p>
 
@@ -599,6 +686,63 @@ Also note this function checks for the outward edges of the sloping tile and cal
 
     <div class="description">
         <p>This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable &#39;jumpCount&#39;</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_leftDown" class="method item public">
+    <h3 class="name"><code>leftDown</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l203"><code>src\States\Platformer-1.0.0.js:203</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The leftDown method returns whether the left key, or the controller left button is down (when active)</p>
 
     </div>
 
@@ -667,6 +811,63 @@ Also note this function checks for the outward edges of the sloping tile and cal
 </div>
 
                 
+                    <div id="method_rightDown" class="method item public">
+    <h3 class="name"><code>rightDown</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l216"><code>src\States\Platformer-1.0.0.js:216</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The rightDown method returns whether the right key, or the controller right button is down (when active)</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
                     <div id="method_update" class="method item public">
     <h3 class="name"><code>update</code></h3>
 
@@ -701,7 +902,7 @@ Also note this function checks for the outward edges of the sloping tile and cal
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l108"><code>src\States\Platformer-1.0.0.js:108</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l128"><code>src\States\Platformer-1.0.0.js:128</code></a>
         
         </p>
 
@@ -713,6 +914,63 @@ Also note this function checks for the outward edges of the sloping tile and cal
 
     <div class="description">
         <p>This method is the main update loop. Move scrolling items here</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_upDown" class="method item public">
+    <h3 class="name"><code>upDown</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l229"><code>src\States\Platformer-1.0.0.js:229</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>The upDown method returns whether the up key, or the controller up button is down (when active)</p>
 
     </div>
 

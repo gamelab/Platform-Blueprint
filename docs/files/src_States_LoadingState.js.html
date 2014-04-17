@@ -43,6 +43,8 @@
             
                 <li><a href="../classes/PlatformState.html">PlatformState</a></li>
             
+                <li><a href="../classes/TouchButton.html">TouchButton</a></li>
+            
             </ul>
 
             <ul id="api-modules" class="apis modules">
@@ -117,6 +119,12 @@ LoadingState.preload = function () {
     //Make sure to call the super at the top.
     //Otherwise the loading graphics will load last, and that defies the whole point in loading them. 
     KiwiLoadingScreen.prototype.preload.call(this);
+
+    //optional on screen controller assets
+    this.addSpriteSheet(&#x27;leftButton&#x27;, &#x27;assets/img/controller/leftButton.png&#x27;, 51, 73);
+    this.addSpriteSheet(&#x27;rightButton&#x27;, &#x27;assets/img/controller/rightButton.png&#x27;, 51, 73);
+    this.addSpriteSheet(&#x27;upButton&#x27;, &#x27;assets/img/controller/upButton.png&#x27;, 73, 51);
+    this.addSpriteSheet(&#x27;downButton&#x27;, &#x27;assets/img/controller/downButton.png&#x27;, 73, 51);
 
     this.addSpriteSheet(&#x27;player&#x27;, &#x27;assets/img/player.png&#x27;, 57, 87);
     this.addSpriteSheet(&#x27;tiles&#x27;, &#x27;assets/img/tileset.png&#x27;, 48, 48);

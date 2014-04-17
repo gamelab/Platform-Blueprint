@@ -9,7 +9,7 @@
 
 
 //Initialise the Kiwi Game. 
-var game = new Kiwi.Game('content', 'Platformer', null, { renderer: Kiwi.RENDERER_CANVAS });
+var game = new Kiwi.Game('content', 'Platformer', null, { plugins: ['TouchButton'] });
 
 //Add all the States we are going to use.
 game.states.addState(LoadingState);
