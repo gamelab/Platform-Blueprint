@@ -21,12 +21,12 @@ PlatformState.create = function () {
     //Switch the background colour back to white from purple
     this.game.stage.color = 'ffffff';
 
-    this.setKeys();
-
     this.generateTileMap();
 
+    //individual tile dimensions
     this.tileWidth = 48;
     this.tileHeight = 48;
+
     //total allowed jumps in succession
     this.jumpCount = 2;
     //variable to count how many jumps you have made in succession
@@ -55,6 +55,7 @@ PlatformState.create = function () {
     this.generateForegroundTileMap();
 
     /*
+    //TEMP: Developer saving some old code for reference
      //Add some mouse events to make the character jump/e.t.c.
     this.game.input.onDown.add(this.jump, this);
     this.game.input.onUp.add(this.releaseInput, this);
@@ -63,10 +64,6 @@ PlatformState.create = function () {
     this.score = 0;
     this.scoreText = new Kiwi.GameObjects.Textfield(this, '0', 50, 50, '#FFF');
     this.addChild(this.scoreText);*/
-}
-
-PlatformState.setKeys = function () {
-    this.upKey = this.game.input.keyboard.addKey(Kiwi.Input.Keycodes.UP);
 }
 
 /**
@@ -91,7 +88,7 @@ PlatformState.generateTileMap = function(){
     this.slopeRightLayer = this.tilemap.getLayerByName('SlopeRight');
     this.addChild(this.slopeRightLayer);
     
-    //allow al tile layers to interact/not interact
+    //allow all tile layers to interact/not interact
     for (var i = 1; i < this.tilemap.tileTypes.length; i++) {
         this.tilemap.tileTypes[i].allowCollisions = Kiwi.Components.ArcadePhysics.ANY;
     }
@@ -140,14 +137,16 @@ PlatformState.update = function () {
     //round the player position to make tile calculation easier
     this.player.x = Math.round(this.player.x);
     this.player.y = Math.round(this.player.y);
+
     //bottom middle point of player to check against sloping tiles
     this.px = Math.round(this.player.x + this.player.box.bounds.width / 2);
     this.py = this.player.y + this.player.height;
 
+    //check sloping tiles
     this.checkLeftSlope();
     this.checkRightSlope();
     
-    //ifthe player is not on a slope, check for regular tile collision
+    //if the player is not on a slope, check for regular tile collision
     if (!this.sloping) {
         //overlap ground
         this.groundLayer.physics.overlapsTiles(this.player, true);
@@ -171,7 +170,7 @@ PlatformState.update = function () {
 }
 
 /**
-* This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variale 'jumpCount'
+* This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable 'jumpCount'
 * @method jump
 * @public
 */
@@ -189,7 +188,7 @@ PlatformState.jump = function () {
 * This method checks to see if a player is on a leftSlope.
 *
 * Please note, "leftSlope" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.
-* Also note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction
+* Also note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction
 *
 * @method checkLeftSlope
 * @public

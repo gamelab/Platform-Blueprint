@@ -2,7 +2,7 @@
 /**
 * The player sprite
 * 
-* This generates a sprite that can use Kiwi's arcade physics.
+* This generates an extended sprite that can use Kiwi's arcade physics.
 *
 */
 

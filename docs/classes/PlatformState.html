@@ -193,6 +193,20 @@
                     <ul class="index-list methods extends">
                         
                             <li class="index-item method public">
+                                <a href="#method_checkLeftSlope">checkLeftSlope</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_checkRightSlope">checkRightSlope</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
                                 <a href="#method_create">create</a>
 
                                 
@@ -200,7 +214,7 @@
                             </li>
                         
                             <li class="index-item method public">
-                                <a href="#method_generateTileMap">generateTileMap</a>
+                                <a href="#method_generateForegroundTileMap">generateForegroundTileMap</a>
 
                                 
                                 
@@ -208,6 +222,13 @@
                         
                             <li class="index-item method public">
                                 <a href="#method_generateTileMap">generateTileMap</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item method public">
+                                <a href="#method_jump">jump</a>
 
                                 
                                 
@@ -241,6 +262,124 @@
         
             <div id="methods" class="api-class-tabpanel">
                 <h2 class="off-left">Methods</h2>
+
+                
+                    <div id="method_checkLeftSlope" class="method item public">
+    <h3 class="name"><code>checkLeftSlope</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l187"><code>src\States\Platformer-1.0.0.js:187</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>This method checks to see if a player is on a leftSlope.</p>
+<p>Please note, &quot;leftSlope&quot; is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.
+Also note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_checkRightSlope" class="method item public">
+    <h3 class="name"><code>checkRightSlope</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l249"><code>src\States\Platformer-1.0.0.js:249</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>This method checks to see if a player is on a rightSlope.</p>
+<p>Please note, &quot;rightSlope&quot; is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.
+Also note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
 
                 
                     <div id="method_create" class="method item public">
@@ -300,8 +439,8 @@
 </div>
 
                 
-                    <div id="method_generateTileMap" class="method item public">
-    <h3 class="name"><code>generateTileMap</code></h3>
+                    <div id="method_generateForegroundTileMap" class="method item public">
+    <h3 class="name"><code>generateForegroundTileMap</code></h3>
 
     
         <span class="paren">()</span>
@@ -334,7 +473,7 @@
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l49"><code>src\States\Platformer-1.0.0.js:49</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l97"><code>src\States\Platformer-1.0.0.js:97</code></a>
         
         </p>
 
@@ -345,7 +484,7 @@
     </div>
 
     <div class="description">
-        <p>The generateTileMap method outputs and organizes tile map data</p>
+        <p>The generateForegroundTileMap method generates tile map data in front of the player</p>
 
     </div>
 
@@ -391,7 +530,7 @@
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l75"><code>src\States\Platformer-1.0.0.js:75</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l69"><code>src\States\Platformer-1.0.0.js:69</code></a>
         
         </p>
 
@@ -402,7 +541,64 @@
     </div>
 
     <div class="description">
-        <p>The generateForegroundTileMap method generates tile map data in front of the player</p>
+        <p>The generateTileMap method outputs and organizes tile map data</p>
+
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="method_jump" class="method item public">
+    <h3 class="name"><code>jump</code></h3>
+
+    
+        <span class="paren">()</span>
+    
+
+    
+
+    
+
+    
+        <span class="flag public">public</span>
+    
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p>
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l172"><code>src\States\Platformer-1.0.0.js:172</code></a>
+        
+        </p>
+
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <p>This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable &#39;jumpCount&#39;</p>
 
     </div>
 
@@ -505,7 +701,7 @@
             
         
         
-        <a href="../files/src_States_Platformer-1.0.0.js.html#l88"><code>src\States\Platformer-1.0.0.js:88</code></a>
+        <a href="../files/src_States_Platformer-1.0.0.js.html#l108"><code>src\States\Platformer-1.0.0.js:108</code></a>
         
         </p>
 

@@ -89,7 +89,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 49,
+            "line": 69,
             "description": "The generateTileMap method outputs and organizes tile map data",
             "itemtype": "method",
             "name": "generateTileMap",
@@ -99,20 +99,50 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 75,
+            "line": 97,
             "description": "The generateForegroundTileMap method generates tile map data in front of the player",
             "itemtype": "method",
-            "name": "generateTileMap",
+            "name": "generateForegroundTileMap",
             "access": "public",
             "tagname": "",
             "class": "PlatformState"
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 88,
+            "line": 108,
             "description": "This method is the main update loop. Move scrolling items here",
             "itemtype": "method",
             "name": "update",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 172,
+            "description": "This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable 'jumpCount'",
+            "itemtype": "method",
+            "name": "jump",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 187,
+            "description": "This method checks to see if a player is on a leftSlope.\n\nPlease note, \"leftSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.\nAlso note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
+            "itemtype": "method",
+            "name": "checkLeftSlope",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 249,
+            "description": "This method checks to see if a player is on a rightSlope.\n\nPlease note, \"rightSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.\nAlso note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
+            "itemtype": "method",
+            "name": "checkRightSlope",
             "access": "public",
             "tagname": "",
             "class": "PlatformState"
@@ -126,7 +156,7 @@
         {
             "file": "src\\player.js",
             "line": 2,
-            "description": "The player sprite\n\nThis generates a sprite that can use Kiwi's arcade physics.",
+            "description": "The player sprite\n\nThis generates an extended sprite that can use Kiwi's arcade physics.",
             "class": ""
         }
     ],
@@ -144,7 +174,7 @@
             "line": " src\\game.js:2"
         },
         {
-            "message": "Missing item type\nThe player sprite\n\nThis generates a sprite that can use Kiwi's arcade physics.",
+            "message": "Missing item type\nThe player sprite\n\nThis generates an extended sprite that can use Kiwi's arcade physics.",
             "line": " src\\player.js:2"
         }
     ]
