@@ -121,7 +121,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 89,
+            "line": 88,
             "description": "The generateTileMap method outputs and organizes tile map data",
             "itemtype": "method",
             "name": "generateTileMap",
@@ -131,7 +131,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 117,
+            "line": 116,
             "description": "The generateForegroundTileMap method generates tile map data in front of the player",
             "itemtype": "method",
             "name": "generateForegroundTileMap",
@@ -141,7 +141,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 128,
+            "line": 127,
             "description": "This method is the main update loop. Move scrolling items here",
             "itemtype": "method",
             "name": "update",
@@ -151,7 +151,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 189,
+            "line": 188,
             "description": "This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable 'jumpCount'",
             "itemtype": "method",
             "name": "jump",
@@ -161,7 +161,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 203,
+            "line": 202,
             "description": "The leftDown method returns whether the left key, or the controller left button is down (when active)",
             "itemtype": "method",
             "name": "leftDown",
@@ -171,7 +171,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 216,
+            "line": 215,
             "description": "The rightDown method returns whether the right key, or the controller right button is down (when active)",
             "itemtype": "method",
             "name": "rightDown",
@@ -181,7 +181,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 229,
+            "line": 228,
             "description": "The upDown method returns whether the up key, or the controller up button is down (when active)",
             "itemtype": "method",
             "name": "upDown",
@@ -191,7 +191,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 245,
+            "line": 243,
             "description": "This method checks to see if a player is on a leftSlope.\n\nPlease note, \"leftSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.\nAlso note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
             "itemtype": "method",
             "name": "checkLeftSlope",
@@ -201,7 +201,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 307,
+            "line": 305,
             "description": "This method checks to see if a player is on a rightSlope.\n\nPlease note, \"rightSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.\nAlso note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
             "itemtype": "method",
             "name": "checkRightSlope",

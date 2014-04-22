@@ -162,7 +162,6 @@ PlatformState.create = function () {
 * @public
 */
 PlatformState.generateController = function () {
-    console.log(this.textures[&#x27;upButton&#x27;], Kiwi.Plugins)
     this.upButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;upButton&#x27;], 81, 300);
     this.addChild(this.upButton);
 
@@ -323,7 +322,6 @@ PlatformState.rightDown = function () {
 */
 PlatformState.upDown = function () {
     if (this.game.input.keyboard.isDown(Kiwi.Input.Keycodes.UP)) return true;
-    console.log(&#x27;cont&#x27;, this.controllerActive);
     if (this.controllerActive) {
         if (this.upButton.isDown) {
             return true;

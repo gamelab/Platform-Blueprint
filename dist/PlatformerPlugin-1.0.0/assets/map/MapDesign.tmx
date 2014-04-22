@@ -2,6 +2,11 @@
 <map version="1.0" orientation="orthogonal" width="36" height="24" tilewidth="48" tileheight="48">
  <tileset firstgid="1" name="TilesetUpdated" tilewidth="48" tileheight="48">
   <image source="../img/tileset.png" width="192" height="240"/>
+  <tile id="0">
+   <properties>
+    <property name="solid" value=""/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Ground" width="36" height="24">
   <data encoding="base64" compression="zlib">
@@ -10,7 +15,7 @@
  </layer>
  <layer name="Objects" width="36" height="24">
   <data encoding="base64" compression="zlib">
-   eJztxbEJAAAIBLGfwf2HtRF0AMsEjkvgR005BwAAVgNpdgA3
+   eJztxbEJADAMBLHPCtl/2DQGB1y5l+C4ZDoVbNwq3wEAgPYAhEoAOQ==
   </data>
  </layer>
  <layer name="SlopeLeft" width="36" height="24">
