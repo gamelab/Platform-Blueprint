@@ -161,16 +161,43 @@ PlatformState.create = function () {
 */
 PlatformState.generateController = function () {
     this.upButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;upButton&#x27;], 81, 300);
+    this.upButton.posX = this.upButton.x;
+    this.upButton.posY = this.upButton.y;
     this.addChild(this.upButton);
 
     this.downButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;downButton&#x27;], 81, 441);
+    this.downButton.posX = this.downButton.x;
+    this.downButton.posY = this.downButton.y;
     this.addChild(this.downButton);
 
     this.leftButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;leftButton&#x27;], 26, 360);
+    this.leftButton.posX = this.leftButton.x;
+    this.leftButton.posY = this.leftButton.y;
     this.addChild(this.leftButton);
 
     this.rightButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;rightButton&#x27;], 162, 360);
+    this.rightButton.posX = this.rightButton.x;
+    this.rightButton.posY = this.rightButton.y;
     this.addChild(this.rightButton);
+}
+
+/**
+* The updateController method moves the controller graphics to stay in position.
+* @method updateController
+* @public
+*/
+PlatformState.updateController = function () {
+    this.upButton.x = this.upButton.posX - this.camera.transform.x;
+    this.upButton.y = this.upButton.posY - this.camera.transform.y;
+
+    this.downButton.x = this.downButton.posX - this.camera.transform.x;
+    this.downButton.y = this.downButton.posY - this.camera.transform.y;
+
+    this.leftButton.x = this.leftButton.posX - this.camera.transform.x;
+    this.leftButton.y = this.leftButton.posY - this.camera.transform.y;
+
+    this.rightButton.x = this.rightButton.posX - this.camera.transform.x;
+    this.rightButton.y = this.rightButton.posY - this.camera.transform.y;
 }
 
 /**
@@ -283,6 +310,7 @@ PlatformState.update = function () {
     }
 
     this.updateCamera();
+    this.updateController();
 }
 
 /**

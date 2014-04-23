@@ -121,7 +121,17 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 86,
+            "line": 94,
+            "description": "The updateController method moves the controller graphics to stay in position.",
+            "itemtype": "method",
+            "name": "updateController",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 113,
             "description": "The generateTileMap method outputs and organizes tile map data in individual layers",
             "itemtype": "method",
             "name": "generateTileMap",
@@ -131,7 +141,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 114,
+            "line": 141,
             "description": "The generateForegroundTileMap method generates tile map data in front of the player",
             "itemtype": "method",
             "name": "generateForegroundTileMap",
@@ -141,7 +151,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 125,
+            "line": 152,
             "description": "This method is the main update loop. Move scrolling items and update player here",
             "itemtype": "method",
             "name": "update",
@@ -151,7 +161,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 198,
+            "line": 226,
             "description": "This method moves the game camera dynamically via the player, but restrained on game borders",
             "itemtype": "method",
             "name": "updateCamera",
@@ -161,7 +171,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 221,
+            "line": 249,
             "description": "This method calls an animation frame, when you are currently on another",
             "itemtype": "method",
             "name": "animatePlayer",
@@ -171,7 +181,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 233,
+            "line": 261,
             "description": "This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable 'jumpCount'",
             "itemtype": "method",
             "name": "jump",
@@ -181,7 +191,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 247,
+            "line": 275,
             "description": "The leftDown method returns whether the left key, or the controller left button is down (when active)",
             "itemtype": "method",
             "name": "leftDown",
@@ -191,7 +201,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 260,
+            "line": 288,
             "description": "The rightDown method returns whether the right key, or the controller right button is down (when active)",
             "itemtype": "method",
             "name": "rightDown",
@@ -201,7 +211,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 273,
+            "line": 301,
             "description": "The upDown method returns whether the up key, or the controller up button is down (when active)",
             "itemtype": "method",
             "name": "upDown",
@@ -211,7 +221,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 288,
+            "line": 316,
             "description": "This method checks to see if a player is on a leftSlope.\n\nPlease note, \"leftSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.\nAlso note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
             "itemtype": "method",
             "name": "checkLeftSlope",
@@ -221,7 +231,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 350,
+            "line": 378,
             "description": "This method checks to see if a player is on a rightSlope.\n\nPlease note, \"rightSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.\nAlso note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
             "itemtype": "method",
             "name": "checkRightSlope",
