@@ -58,7 +58,7 @@
             "extension_for": [],
             "file": "src\\States\\Platformer-1.0.0.js",
             "line": 3,
-            "description": "The PlatformState in the core state that is used in the game. \n\nIt is the state where majority of the functionality occurs 'in-game' occurs.",
+            "description": "The PlatformState in the core state that is used in the game. \n\nIt is the state where the majority of the functionality occurs 'in-game'.",
             "extends": "State",
             "is_constructor": 1
         },
@@ -91,7 +91,7 @@
         },
         {
             "file": "src\\States\\LoadingState.js",
-            "line": 21,
+            "line": 20,
             "description": "This preload method is responsible for preloading all your in game assets.",
             "itemtype": "method",
             "name": "preload",
@@ -111,7 +111,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 69,
+            "line": 67,
             "description": "The generateController method displays control buttons onto the stage, and uses the TouchButton plugin",
             "itemtype": "method",
             "name": "generateController",
@@ -121,8 +121,8 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 88,
-            "description": "The generateTileMap method outputs and organizes tile map data",
+            "line": 86,
+            "description": "The generateTileMap method outputs and organizes tile map data in individual layers",
             "itemtype": "method",
             "name": "generateTileMap",
             "access": "public",
@@ -131,7 +131,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 116,
+            "line": 114,
             "description": "The generateForegroundTileMap method generates tile map data in front of the player",
             "itemtype": "method",
             "name": "generateForegroundTileMap",
@@ -141,8 +141,8 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 127,
-            "description": "This method is the main update loop. Move scrolling items here",
+            "line": 125,
+            "description": "This method is the main update loop. Move scrolling items and update player here",
             "itemtype": "method",
             "name": "update",
             "access": "public",
@@ -151,7 +151,27 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 188,
+            "line": 198,
+            "description": "This method moves the game camera dynamically via the player, but restrained on game borders",
+            "itemtype": "method",
+            "name": "updateCamera",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 221,
+            "description": "This method calls an animation frame, when you are currently on another",
+            "itemtype": "method",
+            "name": "animatePlayer",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platformer-1.0.0.js",
+            "line": 233,
             "description": "This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable 'jumpCount'",
             "itemtype": "method",
             "name": "jump",
@@ -161,7 +181,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 202,
+            "line": 247,
             "description": "The leftDown method returns whether the left key, or the controller left button is down (when active)",
             "itemtype": "method",
             "name": "leftDown",
@@ -171,7 +191,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 215,
+            "line": 260,
             "description": "The rightDown method returns whether the right key, or the controller right button is down (when active)",
             "itemtype": "method",
             "name": "rightDown",
@@ -181,7 +201,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 228,
+            "line": 273,
             "description": "The upDown method returns whether the up key, or the controller up button is down (when active)",
             "itemtype": "method",
             "name": "upDown",
@@ -191,7 +211,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 243,
+            "line": 288,
             "description": "This method checks to see if a player is on a leftSlope.\n\nPlease note, \"leftSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.\nAlso note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
             "itemtype": "method",
             "name": "checkLeftSlope",
@@ -201,7 +221,7 @@
         },
         {
             "file": "src\\States\\Platformer-1.0.0.js",
-            "line": 305,
+            "line": 350,
             "description": "This method checks to see if a player is on a rightSlope.\n\nPlease note, \"rightSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.\nAlso note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
             "itemtype": "method",
             "name": "checkRightSlope",

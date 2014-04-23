@@ -97,9 +97,8 @@
 *
 */
 
-
 //Initialise the Kiwi Game. 
-var game = new Kiwi.Game(&#x27;content&#x27;, &#x27;Platformer&#x27;, null, { plugins: [&#x27;TouchButton&#x27;] });
+var game = new Kiwi.Game(&#x27;content&#x27;, &#x27;Platformer&#x27;, null, {/*renderer:Kiwi.RENDERER_WEBGL,*/plugins: [&#x27;TouchButton&#x27;], width: 960, height: 640 });
 
 //Add all the States we are going to use.
 game.states.addState(LoadingState);

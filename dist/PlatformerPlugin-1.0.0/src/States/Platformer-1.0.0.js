@@ -3,7 +3,7 @@ var PlatformState = new Kiwi.State('PlatformState');
 /**
 * The PlatformState in the core state that is used in the game. 
 *
-* It is the state where majority of the functionality occurs 'in-game' occurs.
+* It is the state where the majority of the functionality occurs 'in-game'.
 * 
 *
 * @class PlatformState
@@ -17,6 +17,8 @@ var PlatformState = new Kiwi.State('PlatformState');
 * @public
 */
 PlatformState.create = function () {
+    //camera to follow movement of player
+    this.camera = this.game.cameras.defaultCamera;
 
     //Switch the background colour back to white from purple
     this.game.stage.color = 'ffffff';
@@ -36,10 +38,10 @@ PlatformState.create = function () {
     this.sloping = true;
 
     this.player = new PlayerSprite(this, this.textures.player, 0, 0);
-    this.player.animation.add('walking', [1, 2, 3, 4, 5, 6], 0.1, true);
-    this.player.animation.add('idle', [0], 0.1, false, true);
-    this.player.animation.add('goingUp', [8], 0.1, false);
-    this.player.animation.add('goingDown', [9], 0.1, false);
+    this.player.animation.add('walking', [1, 2, 3, 4, 5, 6], 0.1, true, true);
+    this.player.animation.add('idle', [0], 0.1, true, true);
+    this.player.animation.add('goingUp', [8], 0.1, true, true);
+    this.player.animation.add('goingDown', [9], 0.1, true, true);
     this.player.physics.acceleration.y = 30;
 
     //Add to the screen.
@@ -51,15 +53,11 @@ PlatformState.create = function () {
     this.generateForegroundTileMap();
 
     /*
-    //TEMP: Developer saving some old code for reference
-     //Add some mouse events to make the character jump/e.t.c.
-    this.game.input.onDown.add(this.jump, this);
-    this.game.input.onUp.add(this.releaseInput, this);
-
     //Score
     this.score = 0;
     this.scoreText = new Kiwi.GameObjects.Textfield(this, '0', 50, 50, '#FFF');
-    this.addChild(this.scoreText);*/
+    this.addChild(this.scoreText);
+    */
 
     //on stage movement controls
     this.controllerActive = true;
@@ -86,7 +84,7 @@ PlatformState.generateController = function () {
 }
 
 /**
-* The generateTileMap method outputs and organizes tile map data
+* The generateTileMap method outputs and organizes tile map data in individual layers
 * @method generateTileMap
 * @public
 */
@@ -125,7 +123,7 @@ PlatformState.generateForegroundTileMap = function () {
 }
 
 /**
-* This method is the main update loop. Move scrolling items here
+* This method is the main update loop. Move scrolling items and update player here
 * @method update
 * @public
 */
@@ -137,11 +135,9 @@ PlatformState.update = function () {
     if (this.leftDown()) {
         this.player.scaleX = -1;
         this.player.physics.velocity.x = -40;
-        this.player.animation.switchTo('walking');
     } else if (this.rightDown()) {
         this.player.scaleX = 1;
         this.player.physics.velocity.x = 40;
-        this.player.animation.switchTo('walking');
     } else {
         this.player.physics.velocity.x = 0;
     }
@@ -162,26 +158,75 @@ PlatformState.update = function () {
     this.checkLeftSlope();
     this.checkRightSlope();
     
+    var onGround = false;
+
     //if the player is not on a slope, check for regular tile collision
     if (!this.sloping) {
         //overlap ground
         this.groundLayer.physics.overlapsTiles(this.player, true);
         //Are we on the ground?
         if (this.player.physics.isTouching(Kiwi.Components.ArcadePhysics.DOWN)) {
-            //console.log('ground')
             this.jumps = 0;
-        } else if (this.jumps == 0) {
-            //if the player walks off an edge, call it a jump
-            this.jumps = 1;
+            onGround = true;
         }
     } else {
         //on ground anyway, so reset jumps
-        this.jumps = 0;
+        if (this.player.physics.velocity.y >= 0) {
+            this.jumps = 0;
+            onGround = true;
+        }
     }
+
+    //set animation
+    if (onGround) {
+        if (this.player.physics.velocity.x == 0) {
+            this.animatePlayer('idle');
+        } else {
+            this.animatePlayer('walking');
+        }
+    }
+
     if (this.upDown()) {
         this.jump();
     } else {
         this.jumpReleased = true;
+    }
+
+    this.updateCamera();
+}
+
+/**
+* This method moves the game camera dynamically via the player, but restrained on game borders
+* @method updateCamera
+* @public
+*/
+PlatformState.updateCamera = function () {
+    if (this.player.x < this.game.stage.width / 2) {
+        this.camera.transform.x = 0;
+    } else if (this.player.x > (this.groundLayer.widthInPixels - (this.game.stage.width / 2))) {
+        this.camera.transform.x = -(this.groundLayer.widthInPixels - this.game.stage.width);
+    } else {
+        this.camera.transform.x = -this.player.x + this.game.stage.width / 2;
+    }
+    
+    if (this.player.y < this.game.stage.height / 2) {
+        this.camera.transform.y = 0;
+    } else if (this.player.y > (this.groundLayer.heightInPixels - (this.game.stage.height / 2))) {
+        this.camera.transform.y = -(this.groundLayer.heightInPixels - this.game.stage.height);
+    } else {
+        this.camera.transform.y = -this.player.y + this.game.stage.height / 2;
+    }
+}
+
+/**
+* This method calls an animation frame, when you are currently on another
+* @method animatePlayer
+* @public
+*/
+PlatformState.animatePlayer = function (anim) {
+    if (this.player.animation.currentAnimation.name != anim) {
+        this.player.animation.switchTo(anim);
+        this.player.animation.play();
     }
 }
 
@@ -194,7 +239,7 @@ PlatformState.jump = function () {
     if (this.jumps < this.jumpCount && this.jumpReleased) {
         this.player.physics.velocity.y = -100;
         this.jumps++;
-        this.player.animation.switchTo('goingUp');
+        this.animatePlayer('goingUp');
         this.jumpReleased = false;
     }
 }

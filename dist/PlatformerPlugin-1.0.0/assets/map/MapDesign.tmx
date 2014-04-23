@@ -10,7 +10,7 @@
  </tileset>
  <layer name="Ground" width="36" height="24">
   <data encoding="base64" compression="zlib">
-   eJxjYBgFwxGwQ/FgANxomJaACYiZ8WB+HBgkx0Jjt42CUTAKRsEoGAWjYBSMglEAAImZALM=
+   eJxjYBgFwxGwQ/FgANxomJaACYiZ8WB+HBhdHQsZZhNjxigYBaNgFIyCUTAKRsEooC8gtQ2Hqy1HrjnoZgIAklcBRg==
   </data>
  </layer>
  <layer name="Objects" width="36" height="24">
