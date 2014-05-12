@@ -41,9 +41,7 @@
         <div id="api-tabview-panel">
             <ul id="api-classes" class="apis classes">
             
-                <li><a href="../classes/PlatformState.html">PlatformState</a></li>
-            
-                <li><a href="../classes/TouchButton.html">TouchButton</a></li>
+                <li><a href="../classes/TopDownState.html">TopDownState</a></li>
             
             </ul>
 
@@ -90,7 +88,7 @@
     <pre class="code prettyprint linenums">
 
 /**
-* The containing Platformer blueprint game file.
+* The containing Top-Down blueprint game file.
 * 
 * This file is only used to initalise (start-up) the main Kiwi Game 
 * and add all of the relevant states to that Game.
@@ -98,11 +96,18 @@
 */
 
 //Initialise the Kiwi Game. 
-var game = new Kiwi.Game(&#x27;content&#x27;, &#x27;Platformer&#x27;, null, {/*renderer:Kiwi.RENDERER_WEBGL,*/plugins: [&#x27;TouchButton&#x27;], width: 960, height: 640 });
+var gameOptions = { 
+    plugins: [&#x27;TouchButton&#x27;],
+	width: 800,
+	height: 600,
+	debug: Kiwi.DEBUG_OFF
+};
+
+var game = new Kiwi.Game(&#x27;content&#x27;, &#x27;TopDown&#x27;, null, gameOptions);
 
 //Add all the States we are going to use.
 game.states.addState(LoadingState);
-game.states.addState(PlatformState);
+game.states.addState(TopDownState);
 
 //Switch to/use the Preloader state. 
 game.states.switchState(&quot;LoadingState&quot;);

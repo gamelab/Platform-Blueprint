@@ -24,7 +24,7 @@ module.exports = function(grunt) {
     uglify: {
             build: {
                 files: {
-                'src/Platformer-<%= pkg.version %>.min.js': ['<%= pkg.main %>']
+                'src/TopDown-<%= pkg.version %>.min.js': ['<%= pkg.main %>']
             }
         }
     },
