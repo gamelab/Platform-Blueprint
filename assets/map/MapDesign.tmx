@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="36" height="24" tilewidth="48" tileheight="48">
+ <tileset firstgid="1" name="TilesetUpdated" tilewidth="48" tileheight="48">
+  <image source="../img/tileset.png" width="192" height="240"/>
+  <tile id="0">
+   <properties>
+    <property name="solid" value=""/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Ground" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFwxGwQ/FgANxomJaACYiZ8WB+HBhdHQsZZhNjxigYBaNgFIyCUTAKRsEooC8gtQ2Hqy1HrjnoZgIAklcBRg==
+  </data>
+ </layer>
+ <layer name="Objects" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztxbEJADAMBLHPCtl/2DQGB1y5l+C4ZDoVbNwq3wEAgPYAhEoAOQ==
+  </data>
+ </layer>
+ <layer name="SlopeLeft" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzkENAAAIBCAr2L+sXxucc5CAKr7pdGC5dAEAgLQBkRsAIw==
+  </data>
+ </layer>
+ <layer name="SlopeRight" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzkERAAAEADAd9O+qgDfObQkWwWe5HWhcPAEAwIQCvFMAJw==
+  </data>
+ </layer>
+ <layer name="Foreground" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztw7ENAAAIA6Ae4f+3utfRFRIS+JsKAABcC41NAFE=
+  </data>
+ </layer>
+</map>
