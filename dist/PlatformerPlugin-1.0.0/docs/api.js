@@ -1,8 +1,7 @@
 YUI.add("yuidoc-meta", function(Y) {
    Y.YUIDoc = { meta: {
     "classes": [
-        "PlatformState",
-        "TouchButton"
+        "TopDownState"
     ],
     "modules": [],
     "allModules": []

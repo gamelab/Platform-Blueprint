@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="36" height="24" tilewidth="48" tileheight="48">
+ <tileset firstgid="1" name="Tiles" tilewidth="48" tileheight="48">
+  <image source="tileset.png" width="144" height="336"/>
+ </tileset>
+ <layer name="ground" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzkkOgCAUBFEQHBDU+9/WPoAr+m9MqpK3r5Tob2VZTCXwp8pq2vjhhx9+JtrlMLXAn1O6afDDDz+fXXKbnsAfotleNX0JJQ==
+  </data>
+ </layer>
+ <layer name="obstacles" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztyTEBAAAIA6B1sH9XM8xXeEmA7+Z4AAB0FnNLACc=
+  </data>
+ </layer>
+ <layer name="objects" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzrENADAIwDBOoP3/WH6ogKGy90iJgD+dhybbL6DHXWoAgFkFf6oARg==
+  </data>
+ </layer>
+ <layer name="foreground" width="36" height="24">
+  <data encoding="base64" compression="zlib">
+   eJztzjkKwDAMBVHFu03uf96oFC6MiqgwzIMpxG8kAgDA/R4tmbJzi1K0amrOLUrXhmk6tyhru1/nFoV/zvgH+M8Hto4Bcw==
+  </data>
+ </layer>
+ <layer name="hitLayer" width="36" height="24" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJzt1TEKAAAIw0BH//9in+CSQoccuIZuznRZ+Ig9FPfkW+7JN8iWe/INsuWev9H0vyRJnQ5L7gHx
+  </data>
+ </layer>
+</map>
