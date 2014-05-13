@@ -19,6 +19,7 @@ var PlatformState = new Kiwi.State('PlatformState');
 PlatformState.create = function () {
     //camera to follow movement of player
     this.camera = this.game.cameras.defaultCamera;
+    console.log('CREATE GAME')
 
     //Switch the background colour back to white from purple
     this.game.stage.color = 'ffffff';

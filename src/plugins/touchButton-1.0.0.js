@@ -34,9 +34,11 @@ Kiwi.Plugins.GameObjects.TouchButton.prototype.update = function(){
 	Kiwi.GameObjects.Sprite.prototype.update.call(this);
 
 	var hit = false;
-	
+    //bug w/game.input
+	//if(this.game.input.isDown) console.log('DOWN')
 	if(this.enabled){
-		if(this.game.input.isDown){
+	    if (this.game.input.isDown) {
+	        //console.log('input:', this.game.input.pointers)
 			for(var i = 0; i<this.game.input.pointers.length; i++){
 				if(this.game.input.pointers[i].active){
 					if(this.hitbox.containsPoint(this.game.input.pointers[i].point)){

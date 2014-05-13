@@ -16,7 +16,7 @@
 * 3 - dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}
 * 4 - subfolder {String} The folder that the loading graphics are located at. 
 */
-var LoadingState = new KiwiLoadingScreen('LoadingState', 'PlatformState', {width:960, height: 640}, 'assets/img/loading/');
+var LoadingState = new KiwiLoadingScreen('LoadingState', 'PlatformState', { width: 960, height: 640 }, 'assets/img/loading/');
 /**
 * This preload method is responsible for preloading all your in game assets.
 * @method preload
@@ -38,4 +38,6 @@ LoadingState.preload = function () {
     this.addSpriteSheet('player', 'assets/img/player.png', 57, 87);
     this.addSpriteSheet('tiles', 'assets/img/tileset.png', 48, 48);
     this.addJSON('tilemap', 'assets/map/map.json');
+
+    this.game.stage.canvas.style.cssText = "idtkscale:ScaleAspectFit";
 };
