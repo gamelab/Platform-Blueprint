@@ -1,7 +1,7 @@
 {
-    "name": "TopDownPlugin",
+    "name": "PlatformerPlugin",
     "version": "1.0.0",
-    "description": "Basic top-down plugin",
+    "description": "Basic platformer plugin",
     "author": "GameLab",
     "logo": "xx",
 
@@ -15,7 +15,7 @@
         "url": "xx"
     },
 
-    "main": "src/TopDown-1.0.0.js",
+    "main": "src/States/Platform-1.0.0.js",
 
     "dependencies": {},
     "devDependencies": {

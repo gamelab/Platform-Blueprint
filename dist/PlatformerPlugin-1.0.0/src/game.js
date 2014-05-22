@@ -15,11 +15,11 @@ var gameOptions = {
 	debug: Kiwi.DEBUG_OFF
 };
 
-var game = new Kiwi.Game('content', 'TopDown', null, gameOptions);
+var game = new Kiwi.Game('content', 'Platform', null, gameOptions);
 
 //Add all the States we are going to use.
 game.states.addState(LoadingState);
-game.states.addState(TopDownState);
+game.states.addState(PlatformState);
 
 //Switch to/use the Preloader state. 
 game.states.switchState("LoadingState");

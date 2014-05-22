@@ -1,7 +1,7 @@
 {
     "project": {
-        "name": "TopDownPlugin",
-        "description": "Basic top-down plugin",
+        "name": "PlatformerPlugin",
+        "description": "Basic platformer plugin",
         "version": "1.0.0",
         "url": "http://kiwijs.org/"
     },
@@ -13,11 +13,20 @@
             "fors": {},
             "namespaces": {}
         },
-        "src\\States\\TopDown-1.0.0.js": {
-            "name": "src\\States\\TopDown-1.0.0.js",
+        "src\\States\\Platform-1.0.0.js": {
+            "name": "src\\States\\Platform-1.0.0.js",
             "modules": {},
             "classes": {
-                "TopDownState": 1
+                "PlatformState": 1
+            },
+            "fors": {},
+            "namespaces": {}
+        },
+        "src\\plugins\\touchButton-1.0.0.js": {
+            "name": "src\\plugins\\touchButton-1.0.0.js",
+            "modules": {},
+            "classes": {
+                "TouchButton": 1
             },
             "fors": {},
             "namespaces": {}
@@ -39,200 +48,196 @@
     },
     "modules": {},
     "classes": {
-        "TopDownState": {
-            "name": "TopDownState",
-            "shortname": "TopDownState",
+        "PlatformState": {
+            "name": "PlatformState",
+            "shortname": "PlatformState",
             "classitems": [],
             "plugins": [],
             "extensions": [],
             "plugin_for": [],
             "extension_for": [],
-            "file": "src\\States\\TopDown-1.0.0.js",
+            "file": "src\\States\\Platform-1.0.0.js",
             "line": 3,
-            "description": "The TopDownState in the core state that is used in the game. \n\nIt is the state where the majority of the functionality occurs 'in-game'.",
+            "description": "The PlatformState in the core state that is used in the game. \n\nIt is the state where the majority of the functionality occurs 'in-game'.",
             "extends": "State",
             "is_constructor": 1
+        },
+        "TouchButton": {
+            "name": "TouchButton",
+            "shortname": "TouchButton",
+            "classitems": [],
+            "plugins": [],
+            "extensions": [],
+            "plugin_for": [],
+            "extension_for": [],
+            "file": "src\\plugins\\touchButton-1.0.0.js",
+            "line": 1,
+            "model": "Kiwi",
+            "submodel": "Plugins"
         }
     },
     "classitems": [
         {
             "file": "src\\States\\LoadingState.js",
             "line": 1,
-            "description": "The Loading State is going to be used to load in all of the ingame assets that we need in game.\n\nBecause in this blueprint there is only a single \"TopDown\" section we are going to load in all of \nthe assets at this point.",
-            "class": "TopDownState"
+            "description": "The Loading State is going to be used to load in all of the in-game assets that we need in game.\n\nBecause in this blueprint there is only a single \"Platform\" section we are going to load in all of \nthe assets at this point.",
+            "class": "PlatformState"
         },
         {
             "file": "src\\States\\LoadingState.js",
             "line": 9,
-            "description": "Since we want to use the custom Kiwi.JS loader with the bobbing kiwi/html5 logo and everything. We need to extend the KiwiLoadingScreen State.  \nThe KiwiLoadingScreen State is an extentsion of a normal State but it has some custom code to handle the loading/bobbing/fading of all the items, so if you override a method (like the preload) for example just make sure you call the super method.\n\nThe parameters we are passing into this method are as ordered.\n1  name {String} Name of this state.\n2  stateToSwitch {String} Name of the state to switch to AFTER all the assets have loaded. Note: The state you want to switch to should already have been added to the game.\n3  dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}\n4  subfolder {String} The folder that the loading graphics are located at.",
-            "class": "TopDownState"
+            "description": "Since we want to use the custom Kiwi.JS loader with the bobbing kiwi/html5 logo and everything. We need to extend the KiwiLoadingScreen State.  \nThe KiwiLoadingScreen State is an extentsion of a normal State but it has some custom code to handle the loading/bobbing/fading of all the items, so if you override a method (like the preload) for example just make sure you call the super method.\n\nThe parameters we are passing into this method are as ordered.\n1 - name {String} Name of this state.\n2 - stateToSwitch {String} Name of the state to switch to AFTER all the assets have loaded. Note: The state you want to switch to should already have been added to the game.\n3 - dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}\n4 - subfolder {String} The folder that the loading graphics are located at.",
+            "class": "PlatformState"
         },
         {
             "file": "src\\States\\LoadingState.js",
-            "line": 22,
+            "line": 20,
             "description": "This preload method is responsible for preloading all your in game assets.",
             "itemtype": "method",
             "name": "preload",
             "access": "private",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
+            "file": "src\\States\\Platform-1.0.0.js",
             "line": 14,
             "description": "This create method is executed when Kiwi Game reaches the boot stage of the game loop.",
             "itemtype": "method",
             "name": "create",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 83,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 67,
             "description": "The generateController method displays control buttons onto the stage, and uses the TouchButton plugin",
             "itemtype": "method",
             "name": "generateController",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 110,
-            "description": "This method keeps the optional directional pad in position",
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 94,
+            "description": "The updateController method moves the controller graphics to stay in position.",
             "itemtype": "method",
             "name": "updateController",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 130,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 113,
             "description": "The generateTileMap method outputs and organizes tile map data in individual layers",
             "itemtype": "method",
             "name": "generateTileMap",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 158,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 141,
             "description": "The generateForegroundTileMap method generates tile map data in front of the player",
             "itemtype": "method",
             "name": "generateForegroundTileMap",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 169,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 152,
             "description": "This method is the main update loop. Move scrolling items and update player here",
             "itemtype": "method",
             "name": "update",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 235,
-            "description": "This method removes the collected item, and triggers a function depending on the type of item collected.",
-            "itemtype": "method",
-            "name": "collectObject",
-            "params": [
-                {
-                    "name": "obj",
-                    "description": "The collected object",
-                    "type": "Object"
-                }
-            ],
-            "access": "public",
-            "tagname": "",
-            "class": "TopDownState"
-        },
-        {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 253,
-            "description": "This method pushes the player away from the collided obstacle tile and plays a hurt animation temporarily",
-            "itemtype": "method",
-            "name": "hurtPlayer",
-            "access": "public",
-            "tagname": "",
-            "class": "TopDownState"
-        },
-        {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 283,
-            "description": "Once the hurt animation is complete, return to playable state",
-            "itemtype": "method",
-            "name": "hurtComplete",
-            "access": "public",
-            "tagname": "",
-            "class": "TopDownState"
-        },
-        {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 292,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 226,
             "description": "This method moves the game camera dynamically via the player, but restrained on game borders",
             "itemtype": "method",
             "name": "updateCamera",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 320,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 249,
             "description": "This method calls an animation frame, when you are currently on another",
             "itemtype": "method",
             "name": "animatePlayer",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 332,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 261,
+            "description": "This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable 'jumpCount'",
+            "itemtype": "method",
+            "name": "jump",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 275,
             "description": "The leftDown method returns whether the left key, or the controller left button is down (when active)",
             "itemtype": "method",
             "name": "leftDown",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 345,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 288,
             "description": "The rightDown method returns whether the right key, or the controller right button is down (when active)",
             "itemtype": "method",
             "name": "rightDown",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 358,
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 301,
             "description": "The upDown method returns whether the up key, or the controller up button is down (when active)",
             "itemtype": "method",
             "name": "upDown",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
         },
         {
-            "file": "src\\States\\TopDown-1.0.0.js",
-            "line": 373,
-            "description": "The downDown method returns whether the down key, or the controller down button is down (when active)",
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 316,
+            "description": "This method checks to see if a player is on a leftSlope.\n\nPlease note, \"leftSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.\nAlso note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
             "itemtype": "method",
-            "name": "downDown",
+            "name": "checkLeftSlope",
             "access": "public",
             "tagname": "",
-            "class": "TopDownState"
+            "class": "PlatformState"
+        },
+        {
+            "file": "src\\States\\Platform-1.0.0.js",
+            "line": 378,
+            "description": "This method checks to see if a player is on a rightSlope.\n\nPlease note, \"rightSlope\" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.\nAlso note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction",
+            "itemtype": "method",
+            "name": "checkRightSlope",
+            "access": "public",
+            "tagname": "",
+            "class": "PlatformState"
         },
         {
             "file": "src\\game.js",
@@ -249,11 +254,19 @@
     ],
     "warnings": [
         {
-            "message": "Missing item type\nThe Loading State is going to be used to load in all of the ingame assets that we need in game.\n\nBecause in this blueprint there is only a single \"TopDown\" section we are going to load in all of \nthe assets at this point.",
+            "message": "unknown tag: model",
+            "line": " src\\plugins\\touchButton-1.0.0.js:1"
+        },
+        {
+            "message": "unknown tag: submodel",
+            "line": " src\\plugins\\touchButton-1.0.0.js:1"
+        },
+        {
+            "message": "Missing item type\nThe Loading State is going to be used to load in all of the in-game assets that we need in game.\n\nBecause in this blueprint there is only a single \"Platform\" section we are going to load in all of \nthe assets at this point.",
             "line": " src\\States\\LoadingState.js:1"
         },
         {
-            "message": "Missing item type\nSince we want to use the custom Kiwi.JS loader with the bobbing kiwi/html5 logo and everything. We need to extend the KiwiLoadingScreen State.  \nThe KiwiLoadingScreen State is an extentsion of a normal State but it has some custom code to handle the loading/bobbing/fading of all the items, so if you override a method (like the preload) for example just make sure you call the super method.\n\nThe parameters we are passing into this method are as ordered.\n1  name {String} Name of this state.\n2  stateToSwitch {String} Name of the state to switch to AFTER all the assets have loaded. Note: The state you want to switch to should already have been added to the game.\n3  dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}\n4  subfolder {String} The folder that the loading graphics are located at.",
+            "message": "Missing item type\nSince we want to use the custom Kiwi.JS loader with the bobbing kiwi/html5 logo and everything. We need to extend the KiwiLoadingScreen State.  \nThe KiwiLoadingScreen State is an extentsion of a normal State but it has some custom code to handle the loading/bobbing/fading of all the items, so if you override a method (like the preload) for example just make sure you call the super method.\n\nThe parameters we are passing into this method are as ordered.\n1 - name {String} Name of this state.\n2 - stateToSwitch {String} Name of the state to switch to AFTER all the assets have loaded. Note: The state you want to switch to should already have been added to the game.\n3 - dimensions {Object} A Object containing the width/height that the game is to be. For example {width: 1024, height: 768}\n4 - subfolder {String} The folder that the loading graphics are located at.",
             "line": " src\\States\\LoadingState.js:9"
         },
         {

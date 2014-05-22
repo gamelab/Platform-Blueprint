@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>src\player.js - PlatformerPlugin</title>
+    <title>src\plugins\touchButton-1.0.0.js - PlatformerPlugin</title>
     <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
@@ -84,36 +84,97 @@
             <div class="apidocs">
                 <div id="docs-main">
                     <div class="content">
-                        <h1 class="file-heading">File: src\player.js</h1>
+                        <h1 class="file-heading">File: src\plugins\touchButton-1.0.0.js</h1>
 
 <div class="file">
     <pre class="code prettyprint linenums">
-
 /**
-* The player sprite
 * 
-* This generates an extended sprite that can use Kiwi&#x27;s arcade physics.
-*
+* @model Kiwi
+* @submodel Plugins
+* @class TouchButton
 */
+Kiwi.Plugins.TouchButton = {
+	name: &#x27;TouchButton&#x27;,
+	version: &#x27;1.0.0&#x27;
+}
+Kiwi.PluginManager.register(Kiwi.Plugins.TouchButton);
 
-var PlayerSprite = function (state, texture, x, y) {
-    //Call the Sprite constructor
-    Kiwi.GameObjects.Sprite.call(this, state, texture, x, y);
+//Do Kiwi Plugin GameObjects Exist?
+if( typeof Kiwi.Plugins.GameObjects == &quot;undefined&quot;) {
+    Kiwi.Plugins.GameObjects = {}; 
+}
 
-    //Now lets add the ArcadePhysics Component to our new GameObject
-    this.physics = this.components.add(new Kiwi.Components.ArcadePhysics(this, this.box));
+Kiwi.Plugins.GameObjects.TouchButton = function(state, atlas, x, y){
 
-    this.update = function () {
+	Kiwi.GameObjects.Sprite.call(this, state, atlas, x, y);
 
-        Kiwi.GameObjects.Sprite.prototype.update.call(this);
-        //Execute the update method on the ArcadePhysics Component.
-        this.physics.update();
+	this.animation.add(&#x27;up&#x27;, [0], 0.1, false);
+	this.animation.add(&#x27;down&#x27;, [1], 0.1, false);	
+	this.animation.play(&#x27;up&#x27;);
+	this.isDown = false;
+	this.isUp = true;
+	this.hitbox = new Kiwi.Geom.Rectangle(x, y, this.width, this.height);
+	this.enabled = true;
 
-    }
+}
+Kiwi.extend(Kiwi.Plugins.GameObjects.TouchButton, Kiwi.GameObjects.Sprite);
+
+Kiwi.Plugins.GameObjects.TouchButton.prototype.update = function(){
+	Kiwi.GameObjects.Sprite.prototype.update.call(this);
+
+	var hit = false;
+    //bug w/game.input
+	//if(this.game.input.isDown) console.log(&#x27;DOWN&#x27;)
+	if(this.enabled){
+	    if (this.game.input.isDown) {
+	        //console.log(&#x27;input:&#x27;, this.game.input.pointers)
+			for(var i = 0; i&lt;this.game.input.pointers.length; i++){
+				if(this.game.input.pointers[i].active){
+					if(this.hitbox.containsPoint(this.game.input.pointers[i].point)){
+						if(this.isUp){
+							this.isDown = true;
+							this.isUp = false;
+							if(this.animation.currentAnimation.name!=&#x27;down&#x27;)
+								this.animation.switchTo(&#x27;down&#x27;, true);
+						}
+						hit = true;
+					}
+				}
+			}
+		}
+	}
+
+	if(!hit){
+		if(this.isDown){
+			this.isDown = false;
+			this.isUp = true;
+			if(this.animation.currentAnimation.name!=&#x27;up&#x27;)
+				this.animation.switchTo(&#x27;up&#x27;, true);
+		}
+	}
 
 }
 
-Kiwi.extend(PlayerSprite, Kiwi.GameObjects.Sprite);
+//Disables the use of this button 
+Kiwi.Plugins.GameObjects.TouchButton.prototype.disable = function(){
+	this.enabled = false;
+}
+
+//Enables the use of this button 
+Kiwi.Plugins.GameObjects.TouchButton.prototype.enable = function(){
+	this.enabled = true;
+}
+
+//Hides the button but still allows its use
+Kiwi.Plugins.GameObjects.TouchButton.prototype.hide = function(){
+	this.visibility = false;
+}
+
+//Shows the button if it was hidden
+Kiwi.Plugins.GameObjects.TouchButton.prototype.show = function(){
+	this.visibility = true;
+}
     </pre>
 </div>
 
