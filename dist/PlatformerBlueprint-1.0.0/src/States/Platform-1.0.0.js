@@ -1,99 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>src\States\Platform-1.0.0.js - PlatformerBlueprint</title>
-    <link rel="stylesheet" href="http://yui.yahooapis.com/3.9.1/build/cssgrids/cssgrids-min.css">
-    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
-    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
-    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
-    <script src="http://yui.yahooapis.com/combo?3.9.1/build/yui/yui-min.js"></script>
-</head>
-<body class="yui3-skin-sam">
-
-<div id="doc">
-    <div id="hd" class="yui3-g header">
-        <div class="yui3-u-3-4">
-            
-                <h1><img src="../assets/css/logo.png" title="PlatformerBlueprint"></h1>
-            
-        </div>
-        <div class="yui3-u-1-4 version">
-            <em>API Docs for: 1.0.0</em>
-        </div>
-    </div>
-    <div id="bd" class="yui3-g">
-
-        <div class="yui3-u-1-4">
-            <div id="docs-sidebar" class="sidebar apidocs">
-                <div id="api-list">
-    <h2 class="off-left">APIs</h2>
-    <div id="api-tabview" class="tabview">
-        <ul class="tabs">
-            <li><a href="#api-classes">Classes</a></li>
-            <li><a href="#api-modules">Modules</a></li>
-        </ul>
-
-        <div id="api-tabview-filter">
-            <input type="search" id="api-filter" placeholder="Type to filter APIs">
-        </div>
-
-        <div id="api-tabview-panel">
-            <ul id="api-classes" class="apis classes">
-            
-                <li><a href="../classes/PlatformState.html">PlatformState</a></li>
-            
-                <li><a href="../classes/TouchButton.html">TouchButton</a></li>
-            
-            </ul>
-
-            <ul id="api-modules" class="apis modules">
-            
-            </ul>
-        </div>
-    </div>
-</div>
-
-            </div>
-        </div>
-        <div class="yui3-u-3-4">
-                <div id="api-options">
-        Show:
-        <label for="api-show-inherited">
-            <input type="checkbox" id="api-show-inherited" checked>
-            Inherited
-        </label>
-
-        <label for="api-show-protected">
-            <input type="checkbox" id="api-show-protected">
-            Protected
-        </label>
-
-        <label for="api-show-private">
-            <input type="checkbox" id="api-show-private">
-            Private
-        </label>
-        <label for="api-show-deprecated">
-            <input type="checkbox" id="api-show-deprecated">
-            Deprecated
-        </label>
-
-    </div>
-
-
-            <div class="apidocs">
-                <div id="docs-main">
-                    <div class="content">
-                        <h1 class="file-heading">File: src\States\Platform-1.0.0.js</h1>
-
-<div class="file">
-    <pre class="code prettyprint linenums">
-var PlatformState = new Kiwi.State(&#x27;PlatformState&#x27;);
+var PlatformState = new Kiwi.State('PlatformState');
 
 /**
 * The PlatformState in the core state that is used in the game. 
 *
-* It is the state where the majority of the functionality occurs &#x27;in-game&#x27;.
+* It is the state where the majority of the functionality occurs 'in-game'.
 * 
 *
 * @class PlatformState
@@ -111,7 +21,7 @@ PlatformState.create = function () {
     this.camera = this.game.cameras.defaultCamera;
 
     //Switch the background colour back to white from purple
-    this.game.stage.color = &#x27;ffffff&#x27;;
+    this.game.stage.color = 'ffffff';
 
     this.generateTileMap();
 
@@ -128,10 +38,10 @@ PlatformState.create = function () {
     this.sloping = true;
 
     this.player = new PlayerSprite(this, this.textures.player, 0, 0);
-    this.player.animation.add(&#x27;walking&#x27;, [1, 2, 3, 4, 5, 6], 0.1, true, true);
-    this.player.animation.add(&#x27;idle&#x27;, [0], 0.1, true, true);
-    this.player.animation.add(&#x27;goingUp&#x27;, [8], 0.1, true, true);
-    this.player.animation.add(&#x27;goingDown&#x27;, [9], 0.1, true, true);
+    this.player.animation.add('walking', [1, 2, 3, 4, 5, 6], 0.1, true, true);
+    this.player.animation.add('idle', [0], 0.1, true, true);
+    this.player.animation.add('goingUp', [8], 0.1, true, true);
+    this.player.animation.add('goingDown', [9], 0.1, true, true);
     this.player.physics.acceleration.y = 30;
 
     //Add to the screen.
@@ -145,7 +55,7 @@ PlatformState.create = function () {
     /*
     //Score
     this.score = 0;
-    this.scoreText = new Kiwi.GameObjects.Textfield(this, &#x27;0&#x27;, 50, 50, &#x27;#FFF&#x27;);
+    this.scoreText = new Kiwi.GameObjects.Textfield(this, '0', 50, 50, '#FFF');
     this.addChild(this.scoreText);
     */
 
@@ -160,22 +70,22 @@ PlatformState.create = function () {
 * @public
 */
 PlatformState.generateController = function () {
-    this.upButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;upButton&#x27;], 81, 300);
+    this.upButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['upButton'], 81, 300);
     this.upButton.posX = this.upButton.x;
     this.upButton.posY = this.upButton.y;
     this.addChild(this.upButton);
 
-    this.downButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;downButton&#x27;], 81, 441);
+    this.downButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['downButton'], 81, 441);
     this.downButton.posX = this.downButton.x;
     this.downButton.posY = this.downButton.y;
     this.addChild(this.downButton);
 
-    this.leftButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;leftButton&#x27;], 26, 360);
+    this.leftButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['leftButton'], 26, 360);
     this.leftButton.posX = this.leftButton.x;
     this.leftButton.posY = this.leftButton.y;
     this.addChild(this.leftButton);
 
-    this.rightButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures[&#x27;rightButton&#x27;], 162, 360);
+    this.rightButton = new Kiwi.Plugins.GameObjects.TouchButton(this, this.textures['rightButton'], 162, 360);
     this.rightButton.posX = this.rightButton.x;
     this.rightButton.posY = this.rightButton.y;
     this.addChild(this.rightButton);
@@ -207,23 +117,23 @@ PlatformState.updateController = function () {
 */
 PlatformState.generateTileMap = function () {
     //Tile map
-    this.tilemap = new Kiwi.GameObjects.Tilemap.TileMap(this, &#x27;tilemap&#x27;, this.textures.tiles);
+    this.tilemap = new Kiwi.GameObjects.Tilemap.TileMap(this, 'tilemap', this.textures.tiles);
 
     //ground
-    this.groundLayer = this.tilemap.getLayerByName(&#x27;Ground&#x27;);
+    this.groundLayer = this.tilemap.getLayerByName('Ground');
     this.addChild(this.groundLayer);
 
-    this.objectLayer = this.tilemap.getLayerByName(&#x27;Objects&#x27;);
+    this.objectLayer = this.tilemap.getLayerByName('Objects');
     this.addChild(this.objectLayer);
 
-    this.slopeLeftLayer = this.tilemap.getLayerByName(&#x27;SlopeLeft&#x27;);
+    this.slopeLeftLayer = this.tilemap.getLayerByName('SlopeLeft');
     this.addChild(this.slopeLeftLayer);
 
-    this.slopeRightLayer = this.tilemap.getLayerByName(&#x27;SlopeRight&#x27;);
+    this.slopeRightLayer = this.tilemap.getLayerByName('SlopeRight');
     this.addChild(this.slopeRightLayer);
 
     //allow all tile layers to interact/not interact
-    for (var i = 1; i &lt; this.tilemap.tileTypes.length; i++) {
+    for (var i = 1; i < this.tilemap.tileTypes.length; i++) {
         this.tilemap.tileTypes[i].allowCollisions = Kiwi.Components.ArcadePhysics.ANY;
     }
 }
@@ -235,7 +145,7 @@ PlatformState.generateTileMap = function () {
 */
 PlatformState.generateForegroundTileMap = function () {
     //foreground assets
-    this.foregroundRightLayer = this.tilemap.getLayerByName(&#x27;Foreground&#x27;);
+    this.foregroundRightLayer = this.tilemap.getLayerByName('Foreground');
     this.addChild(this.foregroundRightLayer);
 }
 
@@ -288,7 +198,7 @@ PlatformState.update = function () {
         }
     } else {
         //on ground anyway, so reset jumps
-        if (this.player.physics.velocity.y &gt;= 0) {
+        if (this.player.physics.velocity.y >= 0) {
             this.jumps = 0;
             onGround = true;
         }
@@ -297,9 +207,9 @@ PlatformState.update = function () {
     //set animation
     if (onGround) {
         if (this.player.physics.velocity.x == 0) {
-            this.animatePlayer(&#x27;idle&#x27;);
+            this.animatePlayer('idle');
         } else {
-            this.animatePlayer(&#x27;walking&#x27;);
+            this.animatePlayer('walking');
         }
     }
 
@@ -319,17 +229,17 @@ PlatformState.update = function () {
 * @public
 */
 PlatformState.updateCamera = function () {
-    if (this.player.x &lt; this.game.stage.width / 2) {
+    if (this.player.x < this.game.stage.width / 2) {
         this.camera.transform.x = 0;
-    } else if (this.player.x &gt; (this.groundLayer.widthInPixels - (this.game.stage.width / 2))) {
+    } else if (this.player.x > (this.groundLayer.widthInPixels - (this.game.stage.width / 2))) {
         this.camera.transform.x = -(this.groundLayer.widthInPixels - this.game.stage.width);
     } else {
         this.camera.transform.x = -this.player.x + this.game.stage.width / 2;
     }
     
-    if (this.player.y &lt; this.game.stage.height / 2) {
+    if (this.player.y < this.game.stage.height / 2) {
         this.camera.transform.y = 0;
-    } else if (this.player.y &gt; (this.groundLayer.heightInPixels - (this.game.stage.height / 2))) {
+    } else if (this.player.y > (this.groundLayer.heightInPixels - (this.game.stage.height / 2))) {
         this.camera.transform.y = -(this.groundLayer.heightInPixels - this.game.stage.height);
     } else {
         this.camera.transform.y = -this.player.y + this.game.stage.height / 2;
@@ -349,15 +259,15 @@ PlatformState.animatePlayer = function (anim) {
 }
 
 /**
-* This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable &#x27;jumpCount&#x27;
+* This method makes the player jump when the Up key is pressed. Can jump multiple times based on the variable 'jumpCount'
 * @method jump
 * @public
 */
 PlatformState.jump = function () {
-    if (this.jumps &lt; this.jumpCount &amp;&amp; this.jumpReleased) {
+    if (this.jumps < this.jumpCount && this.jumpReleased) {
         this.player.physics.velocity.y = -100;
         this.jumps++;
-        this.animatePlayer(&#x27;goingUp&#x27;);
+        this.animatePlayer('goingUp');
         this.jumpReleased = false;
     }
 }
@@ -406,7 +316,7 @@ PlatformState.upDown = function () {
 /**
 * This method checks to see if a player is on a leftSlope.
 *
-* Please note, &quot;leftSlope&quot; is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.
+* Please note, "leftSlope" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing left.
 * Also note, this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction
 *
 * @method checkLeftSlope
@@ -430,10 +340,10 @@ PlatformState.checkLeftSlope = function () {
             var diffX = this.px - slopeX;
             var diffY = this.py - slopeY;
 
-            //if you&#x27;re within the solid part of a sloping tile
+            //if you're within the solid part of a sloping tile
             //OR if youve just entered a tile from the right, snap down into the tile
-            if ((diffY &gt;= this.tileHeight - diffX)
-            || (this.px - (this.player.physics.velocity.x / 10) &gt;= slopeX + this.tileWidth)) {
+            if ((diffY >= this.tileHeight - diffX)
+            || (this.px - (this.player.physics.velocity.x / 10) >= slopeX + this.tileWidth)) {
                 var destY = slopeY + this.tileHeight - diffX;
 
                 this.player.y = Math.ceil(destY - this.player.height);
@@ -445,7 +355,7 @@ PlatformState.checkLeftSlope = function () {
         }
     }
 
-    //check when entering onto a sloping tile, and also when between two, or when you&#x27;ce fallen &quot;into&quot; the tile
+    //check when entering onto a sloping tile, and also when between two, or when you'ce fallen "into" the tile
     var aboveSlope = this.slopeLeftLayer.getTileFromXY(tx, ty-1);
     if (aboveSlope != null) {
         //if a tile exists, check collision
@@ -468,7 +378,7 @@ PlatformState.checkLeftSlope = function () {
 /**
 * This method checks to see if a player is on a rightSlope.
 *
-* Please note, &quot;rightSlope&quot; is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.
+* Please note, "rightSlope" is refering to a slope that when the player is standing on the tile, facing away from the tile, the player is facing right.
 * Also note this function checks for the outward edges of the sloping tile and calculates those points too for a more polished slope interaction
 *
 * @method checkRightSlope
@@ -476,7 +386,7 @@ PlatformState.checkLeftSlope = function () {
 */
 PlatformState.checkRightSlope = function () {
     if (this.sloping) {
-        //console.log(&#x27;Already sloping on left slope&#x27;)
+        //console.log('Already sloping on left slope')
         return;
     }
     //get the bottom centre point ofthe character to calculate position from
@@ -499,10 +409,10 @@ PlatformState.checkRightSlope = function () {
             var diffX = this.px - slopeX;
             var diffY = this.py - slopeY;
 
-            //if you&#x27;re within the solid part of a sloping tile
+            //if you're within the solid part of a sloping tile
             //OR if youve just entered a tile from the left, snap down into the tile
-            if ((diffY &gt;= diffX)
-            || (this.px - (this.player.physics.velocity.x / 10) &lt;= slopeX)) {
+            if ((diffY >= diffX)
+            || (this.px - (this.player.physics.velocity.x / 10) <= slopeX)) {
                 this.player.y = Math.ceil(slopeY + diffX - this.player.height);
                 this.player.physics.velocity.y = 40;
 
@@ -512,7 +422,7 @@ PlatformState.checkRightSlope = function () {
         }
     }
 
-    //check when entering onto a sloping tile, or when you&#x27;ve fallen &quot;into&quot; the tile
+    //check when entering onto a sloping tile, or when you've fallen "into" the tile
     var aboveSlope = this.slopeRightLayer.getTileFromXY(tx, ty - 1);
     if (aboveSlope != null) {
         //if a tile exists, check collision
@@ -529,22 +439,3 @@ PlatformState.checkRightSlope = function () {
         }
     }
 }
-    </pre>
-</div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<script src="../assets/vendor/prettify/prettify-min.js"></script>
-<script>prettyPrint();</script>
-<script src="../assets/js/yui-prettify.js"></script>
-<script src="../assets/../api.js"></script>
-<script src="../assets/js/api-filter.js"></script>
-<script src="../assets/js/api-list.js"></script>
-<script src="../assets/js/api-search.js"></script>
-<script src="../assets/js/apidocs.js"></script>
-</body>
-</html>

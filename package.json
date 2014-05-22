@@ -1,7 +1,7 @@
 {
-    "name": "PlatformerPlugin",
+    "name": "PlatformerBlueprint",
     "version": "1.0.0",
-    "description": "Basic platformer plugin",
+    "description": "Basic platformer blueprint",
     "author": "GameLab",
     "logo": "xx",
 
@@ -15,7 +15,7 @@
         "url": "xx"
     },
 
-    "main": "src/States/Platform-1.0.0.js",
+    "main": "src/game.js",
 
     "dependencies": {},
     "devDependencies": {
