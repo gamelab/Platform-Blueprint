@@ -19,13 +19,11 @@ var PlatformState = new Kiwi.State('PlatformState');
 PlatformState.create = function () {
     //camera to follow movement of player
     this.camera = this.game.cameras.defaultCamera;
-    console.log('CREATE GAME')
 
     //Switch the background colour back to white from purple
     this.game.stage.color = 'ffffff';
 
     this.generateTileMap();
-    console.log('CREATE GAME')
 
     //individual tile dimensions
     this.tileWidth = 48;
@@ -38,7 +36,6 @@ PlatformState.create = function () {
     //catch if up key is still down
     this.jumpReleased = true;
     this.sloping = true;
-    console.log('CREATE GAME')
 
     this.player = new PlayerSprite(this, this.textures.player, 0, 0);
     this.player.animation.add('walking', [1, 2, 3, 4, 5, 6], 0.1, true, true);
@@ -46,7 +43,6 @@ PlatformState.create = function () {
     this.player.animation.add('goingUp', [8], 0.1, true, true);
     this.player.animation.add('goingDown', [9], 0.1, true, true);
     this.player.physics.acceleration.y = 30;
-    console.log('CREATE GAME')
 
     //Add to the screen.
     this.addChild(this.player);
@@ -55,7 +51,6 @@ PlatformState.create = function () {
     this.py = this.player.y + this.player.height;
 
     this.generateForegroundTileMap();
-    console.log('CREATE GAME')
 
     /*
     //Score
@@ -67,7 +62,6 @@ PlatformState.create = function () {
     //on stage movement controls
     this.controllerActive = true;
     if (this.controllerActive) this.generateController();
-    console.log('CREATE GAME')
 }
 
 /**
@@ -122,33 +116,26 @@ PlatformState.updateController = function () {
 * @public
 */
 PlatformState.generateTileMap = function () {
-    console.log('CREATE MAP')
     //Tile map
     this.tilemap = new Kiwi.GameObjects.Tilemap.TileMap(this, 'tilemap', this.textures.tiles);
 
-    console.log('CREATE MAP', this.tilemap)
     //ground
     this.groundLayer = this.tilemap.getLayerByName('Ground');
     this.addChild(this.groundLayer);
-    console.log('CREATE MAP')
 
     this.objectLayer = this.tilemap.getLayerByName('Objects');
     this.addChild(this.objectLayer);
 
-    console.log('CREATE MAP')
     this.slopeLeftLayer = this.tilemap.getLayerByName('SlopeLeft');
     this.addChild(this.slopeLeftLayer);
-    console.log('CREATE MAP')
 
     this.slopeRightLayer = this.tilemap.getLayerByName('SlopeRight');
     this.addChild(this.slopeRightLayer);
 
-    console.log('CREATE MAP')
     //allow all tile layers to interact/not interact
     for (var i = 1; i < this.tilemap.tileTypes.length; i++) {
         this.tilemap.tileTypes[i].allowCollisions = Kiwi.Components.ArcadePhysics.ANY;
     }
-    console.log('CREATE MAP')
 }
 
 /**
